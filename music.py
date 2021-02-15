@@ -1,5 +1,5 @@
 # 生成程序
-import star as par
+import effect as par
 import os
 
 
@@ -24,11 +24,11 @@ def init(funName):
     url = 'functions\\' + funName + '\\main\\' + funName
     if not os.path.exists(url):
         os.makedirs(url)
-    url = 'functions\\' + funName + '\\init.mc.function'
+    url = 'functions\\' + funName + '\\init.mcfunction'
     with open(url, 'w') as fp:
         s = 'scoreboard objectives add ' + funName + ' dummy ' + funName
         fp.write(s)
-    url = 'functions\\' + funName + '\\main.mc.function'
+    url = 'functions\\' + funName + '\\main.mcfunction'
     fp = open(url, 'w')
     fp.close()
 
