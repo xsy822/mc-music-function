@@ -1,5 +1,5 @@
 # 生成程序
-import wujiaoxin as par
+import star as par
 import os
 
 

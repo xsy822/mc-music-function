@@ -2,7 +2,7 @@
 import math as m
 
 
-def wujiaoxin(particle, pos, r, fp):
+def star(particle, pos, r, fp):
     """指定地点绘制五角星
         - particle:粒子名称
         - pos:三维坐标
