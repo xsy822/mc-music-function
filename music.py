@@ -21,7 +21,7 @@ def init(funName):
     """创建基础function
         - funName:函数名称
     """
-    url = 'functions\\' + funName + '\\main'
+    url = 'functions\\' + funName + '\\main\\' + funName
     if not os.path.exists(url):
         os.makedirs(url)
     url = 'functions\\' + funName + '\\init.mc.function'
