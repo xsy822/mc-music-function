@@ -1,0 +1,1 @@
+execute as @ a[scores={star=10..30}] run function a:main\part0.mcfunction
