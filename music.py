@@ -31,9 +31,10 @@ class Track:
             - effectParticle:音符特效粒子(默认'flame')
             - r:特效半径(默认2)
         """
-        self.newpos = [tone, self.pos[1], self.pos[2]+delay]
+        self.newpos = [tone, self.pos[1], self.pos[2] + delay]
         self.allticks, self.pos = route.route(self.pos, self.newpos, self.speed, self.routeEffect,
                                               self.routeParticle, self.funName, effectName, effectParticle, self.allticks, r)
+        print(self.pos)
 
 
 def init(funName):
@@ -55,9 +56,15 @@ def init(funName):
 newTrack = Track(90, 'star')  # test
 newTrack.add(1, 3)
 newTrack.add(2, 3)
+
+
+# 收尾
+url = 'functions\\' + newTrack.funName + '\\main.mcfunction'
 if newTrack.allticks % 20:
-    url = 'functions\\' + newTrack.funName + '\\main.mcfunction'
     num = int(newTrack.allticks / 20)
     with open(url, 'a') as fp:
-        fp.write('execute as @a[scores={%s=%d..%d}] run function a:main/part%d.mcfunction\n' % (
-            newTrack.funName, 20*num, 20*(num+1), num))
+        fp.write('execute as @a[scores={%s=%d..%d}] run function %s:%s/main/part%d\n' % (
+            newTrack.funName, 20*num, 20*(num + 1), newTrack.funName, newTrack.funName, num))
+
+with open(url, 'a') as fp:
+    fp.write('scoreboard players add @a %s 1\n' % (newTrack.funName))

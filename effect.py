@@ -10,6 +10,7 @@ def star(funName, particle, pos, time, r, fp):
         - r:五角星外接圆半径
         - fp:文件指针
     """
+    print(pos)
     th1, th2 = 0, 360
     x, y, x1, y1, x2, y2, xc, yc = 0, 0, 0, 0, 0, 0, 0, 0
     while th1 <= 360:
