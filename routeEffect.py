@@ -42,7 +42,7 @@ def straight(pos, newpos, speed, particle, funName, allticks):
         for j in range(20):
             x1, z1 = x * (i * 20 + j) / (ticks * 20), z * \
                 (i * 20 + j) / (ticks * 20)
-            mainUrl = 'functions\\' + funName + '\\main\\part' + \
+            mainUrl = 'functions\\' + funName + '\\main//part' + \
                 str(int(allticks/20+0.5)) + '.mcfunction'
             with open(mainUrl, 'a') as fp:
                 fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f\n' % (
@@ -50,9 +50,9 @@ def straight(pos, newpos, speed, particle, funName, allticks):
         allticks += 1
         if allticks % 20 == 0:
             url = 'functions\\' + funName + '\\main.mcfunction'
-            num = allticks / 20
+            num = int(allticks / 20)
             with open(url, 'a') as fp:
-                fp.write('execute as @a[scores={%s=%d..%d}] run function a:main\\part%d.mcfunction' % (
+                fp.write('execute as @a[scores={%s=%d..%d}] run function a:main/part%d.mcfunction' % (
                     funName, allticks - 20, allticks, num))
     effectpos = [x1, y, z1]
     if z != 0:

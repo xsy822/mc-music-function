@@ -45,8 +45,8 @@ def init(funName):
         os.makedirs(url)
     url = 'functions\\' + funName + '\\init.mcfunction'
     with open(url, 'w') as fp:
-        s = 'scoreboard objectives add ' + funName + ' dummy ' + '"' + funName + '"'
-        fp.write(s)
+        fp.write(
+            'scoreboard objectives add %s dummy "%s"\nscoreboard players set @a %s 0' % (funName, funName, funName))
     url = 'functions\\' + funName + '\\main.mcfunction'
     fp = open(url, 'w')
     fp.close()
@@ -57,7 +57,7 @@ newTrack.add(1, 3)
 newTrack.add(2, 3)
 if newTrack.allticks % 20:
     url = 'functions\\' + newTrack.funName + '\\main.mcfunction'
-    num = newTrack.allticks / 20
+    num = int(newTrack.allticks / 20)
     with open(url, 'a') as fp:
-        fp.write('execute as @a[scores={%s=%d..%d}] run function a:main\\part%d.mcfunction' % (
+        fp.write('execute as @a[scores={%s=%d..%d}] run function a:main/part%d.mcfunction\n' % (
             newTrack.funName, 20*num, 20*(num+1), num))
