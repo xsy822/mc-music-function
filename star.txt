@@ -1,4 +1,4 @@
-star straight dust&1.0&0.5&0.5&1.0 straight flame star dust&1.0&0.5&0.5&1.0 star flame guitar harp
+star straight end_rod straight flame star end_rod star flame guitar harp
 60 8 A8 d4 10 d4 12 A8 d4 10 d4
 8 A12 d4 10 d4 12 A12 d4 10 d4
 11 A13 d4 13 d4 15 A13 d4 11 d4
