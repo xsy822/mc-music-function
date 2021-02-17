@@ -14,30 +14,29 @@ class Track:
         - routeParticle:路径粒子名称
     """
 
-    def __init__(self, speed, funName='test', routeEffect='straight', routeParticle='flame'):
+    def __init__(self, speed, funName):
         self.pos = [0, 0, 0]
         self.allticks = 0
         self.delay = 10
         self.funName = funName
         self.speed = speed
-        self.routeEffect = routeEffect
-        self.routeParticle = routeParticle
         init(self.funName)
 
-    def add(self, tone, delay, effectName='star', effectParticle='flame', r=2, sound='harp', btn=False):
+    def add(self, tone, delay, routeEffect, routeParticle, effectName, effectParticle, sound,  r=1, m=True, btn=False):
         """增加一个音符
             - tone:音调，降1开始的递增数(1,2,3...)
             - delay:上一个与下一个音符间的间隔，单位1/32全音符
-            - effectName:音符特效名(默认'star')
-            - effectParticle:音符特效粒子(默认'flame')
-            - r:特效半径(默认2)
+            - effectName:音符特效名
+            - effectParticle:音符特效粒子
+            - r:特效半径(默认1)
+            - m:标记区别伴奏
             - btn:是否切换下一拍
         """
         if btn:
             self.delay = delay
         newpos = [tone, self.pos[1], self.pos[2] + self.delay]
-        self.allticks, self.pos = route.route(self.pos, newpos, self.speed, self.routeEffect, self.routeParticle,
-                                              self.funName, effectName, effectParticle, tone, sound, self.allticks, r, btn)
+        self.allticks, self.pos = route.route(self.pos, newpos, self.speed, routeEffect, routeParticle,
+                                              self.funName, effectName, effectParticle, tone, sound, self.allticks, r, m, btn)
         print(self.pos)
 
 
@@ -62,10 +61,23 @@ name = 'star'
 with open('%s.txt' % (name), 'r') as fp:
     a = fp.read()
     a = a.split()
+    funName = a[0]
+    routeEffect1 = a[1]
+    routeParticle1 = a[2].replace('&', ' ')
+    routeEffect2 = a[3]
+    routeParticle2 = a[4].replace('&', ' ')
+    effectName1 = a[5]
+    effectParticle1 = a[6].replace('&', ' ')
+    effectName2 = a[7]
+    effectParticle2 = a[8].replace('&', ' ')
+    sound1 = a[9]
+    sound2 = a[10]
+    a = a[11:]
     for index, i in enumerate(a):
         if i[0] == 'd':
             a[index-1] = 'c'+a[index-1]
     speed = int(a[0])
+    print(speed)
     a = a[1:]
 
 newTrack = Track(speed, name)
@@ -73,16 +85,20 @@ delay = 10
 for i in a:
     if i[0] == 'c':
         if i[1] == 'A':
-            newTrack.add(int(i[2:]), delay, btn=True)
+            newTrack.add(int(i[2:]), delay, routeEffect2, routeParticle2,
+                         effectName2, effectParticle2, sound2, btn=True)
         else:
-            newTrack.add(int(i[1:]), delay, sound='guitar', btn=True)
+            newTrack.add(int(i[1:]), delay, routeEffect1, routeParticle1,
+                         effectName1, effectParticle1, sound1, m=False, btn=True)
     elif i[0] == 'd':
         delay = int(i[1])
     else:
         if i[0] == 'A':
-            newTrack.add(int(i[1:]), delay)
+            newTrack.add(int(i[1:]), delay, routeEffect2, routeParticle2,
+                         effectName2, effectParticle2, sound2)
         else:
-            newTrack.add(int(i), delay, sound='guitar')
+            newTrack.add(int(i), delay, routeEffect1, routeParticle1,
+                         effectName1, effectParticle1, sound1, m=False)
 
 # 收尾
 url = 'functions\\' + newTrack.funName + '\\main.mcfunction'

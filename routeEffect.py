@@ -1,7 +1,7 @@
 import effect
 
 
-def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, effectParticle, tone, sound, allticks, r, btn):
+def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, effectParticle, tone, sound, allticks, r, m, btn):
     """绘制轨道路径及音符特效
         - pos:三维坐标
         - newpos:目的地坐标
@@ -20,7 +20,7 @@ def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, e
     # 路线效果
     if routeEffect == 'straight':
         allticks, effectTicks, pos, effectpos, mainUrl = straight(
-            pos, newpos, speed, routeParticle, funName, allticks, btn)
+            pos, newpos, speed, routeParticle, funName, allticks, m, btn)
 
     # 特效
     with open(mainUrl, 'a') as fp:
@@ -34,7 +34,7 @@ def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, e
     return allticks, pos
 
 
-def straight(pos, newpos, speed, particle, funName, allticks, btn):
+def straight(pos, newpos, speed, particle, funName, allticks, m, btn):
     """直线
         - pos:三维坐标
         - newpos:目的地坐标
@@ -44,6 +44,8 @@ def straight(pos, newpos, speed, particle, funName, allticks, btn):
         - allticks:总时间，单位tick
     """
     x, y, z = [i - j for i, j in zip(newpos, pos)]
+    if m:
+        x += 7
     ticks = int((z * 300) / (speed * 2) + 0.5)
     for i in range(ticks):
         for j in range(20):
