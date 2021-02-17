@@ -54,7 +54,7 @@ def straight(pos, newpos, speed, particle, funName, allticks, m, btn):
             mainUrl = 'functions\\' + funName + '\\main//part' + \
                 str(int(allticks/20)) + '.mcfunction'
             with open(mainUrl, 'a') as fp:
-                fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f 0 1 force\n' % (
+                fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0 0 force\n' % (
                     funName, allticks, particle, -x1, y, z1))
         allticks += 1
     effectpos = [x1, y, z1]
