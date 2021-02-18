@@ -1,0 +1,4 @@
+star straight end_rod star end_rod 0 120 
+60 d16 60 d16 67 d16 67 d16 69 d16 69 d16 67 d32 
+65 d16 65 d16 64 d16 64 d16 62 d16 62 d16 60 d40 
+60 d8

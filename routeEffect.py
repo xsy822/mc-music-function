@@ -12,7 +12,7 @@ def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, e
         - effectName:音符特效名
         - effectParticle:音符特效粒子
         - tone:音调
-        - sound:音色
+        - sound:音色编号
         - allticks:总时间，单位tick
         - r:音符特效半径
         - btn:判断是否为同一拍的乐符
@@ -56,6 +56,9 @@ def straight(pos, newpos, speed, particle, funName, allticks, m, btn):
             with open(mainUrl, 'a') as fp:
                 fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0 0 force\n' % (
                     funName, allticks, particle, -x1, y, z1))
+        with open(mainUrl, 'a') as fp:
+            fp.write('execute as @a[scores={%s=%d}] run tp @s ~%d ~%d ~%d 0 30\n' % (
+                funName, allticks, -60, 10, z1-30))
         allticks += 1
     effectpos = [x1, y, z1]
     effectTicks = allticks
@@ -67,8 +70,5 @@ def straight(pos, newpos, speed, particle, funName, allticks, m, btn):
 
 
 def playsound(funName, effectpos, sound, tone, allticks, fp):
-    music = {5: 0.530, 6: 0.595, 7: 0.667, 8: 0.707, 9: 0.794,
-             10: 0.890, 11: 0.944, 12: 1.059, 13: 1.189, 14: 1.334, 15: 1.414, 16: 1.587, 17: 1.781, 18: 1.888}
-    tone = music[tone]
-    fp.write('execute as @a[scores={%s=%d}] at @s run playsound minecraft:block.note_block.%s master @a ~ ~ ~ 1 %.3f\n' % (
+    fp.write('execute as @a[scores={%s=%d}] at @s run playsound %d.%d master @a ~ ~ ~\n' % (
         funName, allticks, sound, tone))

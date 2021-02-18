@@ -1,0 +1,9 @@
+star straight flame star flame 0 120 
+48 d8 52 d8 55 d8 52 d8 
+48 d8 52 d8 55 d8 52 d8 
+53 d8 57 d8 60 d8 53 d8 
+48 d8 52 d8 55 d8 52 d8 
+53 d8 57 d8 60 d8 53 d8 
+48 d8 52 d8 55 d8 52 d8 
+50 
+d32 48 d8 52 d8 55 d8 52 d8
