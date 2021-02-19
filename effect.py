@@ -4,6 +4,7 @@ import math as m
 
 def star(funName, particle, pos, time, r, fp):
     """指定地点绘制五角星
+        - funName:函数名
         - particle:粒子名称
         - pos:三维坐标
         - time:时间，(计分板达到规定分数才执行)
