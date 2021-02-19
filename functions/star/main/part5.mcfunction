@@ -18,7 +18,7 @@ execute as @a[scores={star=100}] run particle end_rod ~-67.28 ~0.00 ~80.08 ~ ~ ~
 execute as @a[scores={star=100}] run particle end_rod ~-67.28 ~0.00 ~80.12 ~ ~ ~ 0 0 force
 execute as @a[scores={star=100}] run particle end_rod ~-67.29 ~0.00 ~80.16 ~ ~ ~ 0 0 force
 execute as @a[scores={star=100}] run particle end_rod ~-67.30 ~0.00 ~80.20 ~ ~ ~ 0 0 force
-execute as @a[scores={star=100}] run tp @s ~-60 ~10 ~50 0 30
+execute as @a[scores={star=100}] run tp @s ~-60 ~10 ~50.20 0 30
 execute as @a[scores={star=101}] run particle end_rod ~-67.30 ~0.00 ~80.24 ~ ~ ~ 0 0 force
 execute as @a[scores={star=101}] run particle end_rod ~-67.31 ~0.00 ~80.28 ~ ~ ~ 0 0 force
 execute as @a[scores={star=101}] run particle end_rod ~-67.31 ~0.00 ~80.32 ~ ~ ~ 0 0 force
@@ -39,7 +39,7 @@ execute as @a[scores={star=101}] run particle end_rod ~-67.38 ~0.00 ~80.88 ~ ~ ~
 execute as @a[scores={star=101}] run particle end_rod ~-67.39 ~0.00 ~80.92 ~ ~ ~ 0 0 force
 execute as @a[scores={star=101}] run particle end_rod ~-67.39 ~0.00 ~80.96 ~ ~ ~ 0 0 force
 execute as @a[scores={star=101}] run particle end_rod ~-67.39 ~0.00 ~81.00 ~ ~ ~ 0 0 force
-execute as @a[scores={star=101}] run tp @s ~-60 ~10 ~51 0 30
+execute as @a[scores={star=101}] run tp @s ~-60 ~10 ~51.00 0 30
 execute as @a[scores={star=102}] run particle end_rod ~-67.40 ~0.00 ~81.04 ~ ~ ~ 0 0 force
 execute as @a[scores={star=102}] run particle end_rod ~-67.41 ~0.00 ~81.08 ~ ~ ~ 0 0 force
 execute as @a[scores={star=102}] run particle end_rod ~-67.41 ~0.00 ~81.12 ~ ~ ~ 0 0 force
@@ -60,7 +60,7 @@ execute as @a[scores={star=102}] run particle end_rod ~-67.48 ~0.00 ~81.68 ~ ~ ~
 execute as @a[scores={star=102}] run particle end_rod ~-67.48 ~0.00 ~81.72 ~ ~ ~ 0 0 force
 execute as @a[scores={star=102}] run particle end_rod ~-67.49 ~0.00 ~81.76 ~ ~ ~ 0 0 force
 execute as @a[scores={star=102}] run particle end_rod ~-67.50 ~0.00 ~81.80 ~ ~ ~ 0 0 force
-execute as @a[scores={star=102}] run tp @s ~-60 ~10 ~51 0 30
+execute as @a[scores={star=102}] run tp @s ~-60 ~10 ~51.80 0 30
 execute as @a[scores={star=103}] run particle end_rod ~-67.50 ~0.00 ~81.84 ~ ~ ~ 0 0 force
 execute as @a[scores={star=103}] run particle end_rod ~-67.50 ~0.00 ~81.88 ~ ~ ~ 0 0 force
 execute as @a[scores={star=103}] run particle end_rod ~-67.51 ~0.00 ~81.92 ~ ~ ~ 0 0 force
@@ -81,7 +81,7 @@ execute as @a[scores={star=103}] run particle end_rod ~-67.58 ~0.00 ~82.48 ~ ~ ~
 execute as @a[scores={star=103}] run particle end_rod ~-67.58 ~0.00 ~82.52 ~ ~ ~ 0 0 force
 execute as @a[scores={star=103}] run particle end_rod ~-67.59 ~0.00 ~82.56 ~ ~ ~ 0 0 force
 execute as @a[scores={star=103}] run particle end_rod ~-67.59 ~0.00 ~82.60 ~ ~ ~ 0 0 force
-execute as @a[scores={star=103}] run tp @s ~-60 ~10 ~52 0 30
+execute as @a[scores={star=103}] run tp @s ~-60 ~10 ~52.60 0 30
 execute as @a[scores={star=104}] run particle end_rod ~-67.60 ~0.00 ~82.64 ~ ~ ~ 0 0 force
 execute as @a[scores={star=104}] run particle end_rod ~-67.61 ~0.00 ~82.68 ~ ~ ~ 0 0 force
 execute as @a[scores={star=104}] run particle end_rod ~-67.61 ~0.00 ~82.72 ~ ~ ~ 0 0 force
@@ -102,7 +102,7 @@ execute as @a[scores={star=104}] run particle end_rod ~-67.68 ~0.00 ~83.28 ~ ~ ~
 execute as @a[scores={star=104}] run particle end_rod ~-67.69 ~0.00 ~83.32 ~ ~ ~ 0 0 force
 execute as @a[scores={star=104}] run particle end_rod ~-67.69 ~0.00 ~83.36 ~ ~ ~ 0 0 force
 execute as @a[scores={star=104}] run particle end_rod ~-67.69 ~0.00 ~83.40 ~ ~ ~ 0 0 force
-execute as @a[scores={star=104}] run tp @s ~-60 ~10 ~53 0 30
+execute as @a[scores={star=104}] run tp @s ~-60 ~10 ~53.40 0 30
 execute as @a[scores={star=105}] run particle end_rod ~-67.70 ~0.00 ~83.44 ~ ~ ~ 0 0 force
 execute as @a[scores={star=105}] run particle end_rod ~-67.70 ~0.00 ~83.48 ~ ~ ~ 0 0 force
 execute as @a[scores={star=105}] run particle end_rod ~-67.71 ~0.00 ~83.52 ~ ~ ~ 0 0 force
@@ -123,7 +123,7 @@ execute as @a[scores={star=105}] run particle end_rod ~-67.78 ~0.00 ~84.08 ~ ~ ~
 execute as @a[scores={star=105}] run particle end_rod ~-67.78 ~0.00 ~84.12 ~ ~ ~ 0 0 force
 execute as @a[scores={star=105}] run particle end_rod ~-67.79 ~0.00 ~84.16 ~ ~ ~ 0 0 force
 execute as @a[scores={star=105}] run particle end_rod ~-67.80 ~0.00 ~84.20 ~ ~ ~ 0 0 force
-execute as @a[scores={star=105}] run tp @s ~-60 ~10 ~54 0 30
+execute as @a[scores={star=105}] run tp @s ~-60 ~10 ~54.20 0 30
 execute as @a[scores={star=106}] run particle end_rod ~-67.80 ~0.00 ~84.24 ~ ~ ~ 0 0 force
 execute as @a[scores={star=106}] run particle end_rod ~-67.81 ~0.00 ~84.28 ~ ~ ~ 0 0 force
 execute as @a[scores={star=106}] run particle end_rod ~-67.81 ~0.00 ~84.32 ~ ~ ~ 0 0 force
@@ -144,7 +144,7 @@ execute as @a[scores={star=106}] run particle end_rod ~-67.88 ~0.00 ~84.88 ~ ~ ~
 execute as @a[scores={star=106}] run particle end_rod ~-67.89 ~0.00 ~84.92 ~ ~ ~ 0 0 force
 execute as @a[scores={star=106}] run particle end_rod ~-67.89 ~0.00 ~84.96 ~ ~ ~ 0 0 force
 execute as @a[scores={star=106}] run particle end_rod ~-67.89 ~0.00 ~85.00 ~ ~ ~ 0 0 force
-execute as @a[scores={star=106}] run tp @s ~-60 ~10 ~55 0 30
+execute as @a[scores={star=106}] run tp @s ~-60 ~10 ~55.00 0 30
 execute as @a[scores={star=107}] run particle end_rod ~-67.90 ~0.00 ~85.04 ~ ~ ~ 0 0 force
 execute as @a[scores={star=107}] run particle end_rod ~-67.91 ~0.00 ~85.08 ~ ~ ~ 0 0 force
 execute as @a[scores={star=107}] run particle end_rod ~-67.91 ~0.00 ~85.12 ~ ~ ~ 0 0 force
@@ -165,7 +165,7 @@ execute as @a[scores={star=107}] run particle end_rod ~-67.98 ~0.00 ~85.68 ~ ~ ~
 execute as @a[scores={star=107}] run particle end_rod ~-67.98 ~0.00 ~85.72 ~ ~ ~ 0 0 force
 execute as @a[scores={star=107}] run particle end_rod ~-67.99 ~0.00 ~85.76 ~ ~ ~ 0 0 force
 execute as @a[scores={star=107}] run particle end_rod ~-68.00 ~0.00 ~85.80 ~ ~ ~ 0 0 force
-execute as @a[scores={star=107}] run tp @s ~-60 ~10 ~55 0 30
+execute as @a[scores={star=107}] run tp @s ~-60 ~10 ~55.80 0 30
 execute as @a[scores={star=108}] run particle end_rod ~-68.00 ~0.00 ~85.84 ~ ~ ~ 0 0 force
 execute as @a[scores={star=108}] run particle end_rod ~-68.00 ~0.00 ~85.88 ~ ~ ~ 0 0 force
 execute as @a[scores={star=108}] run particle end_rod ~-68.01 ~0.00 ~85.92 ~ ~ ~ 0 0 force
@@ -186,7 +186,7 @@ execute as @a[scores={star=108}] run particle end_rod ~-68.08 ~0.00 ~86.48 ~ ~ ~
 execute as @a[scores={star=108}] run particle end_rod ~-68.08 ~0.00 ~86.52 ~ ~ ~ 0 0 force
 execute as @a[scores={star=108}] run particle end_rod ~-68.09 ~0.00 ~86.56 ~ ~ ~ 0 0 force
 execute as @a[scores={star=108}] run particle end_rod ~-68.09 ~0.00 ~86.60 ~ ~ ~ 0 0 force
-execute as @a[scores={star=108}] run tp @s ~-60 ~10 ~56 0 30
+execute as @a[scores={star=108}] run tp @s ~-60 ~10 ~56.60 0 30
 execute as @a[scores={star=109}] run particle end_rod ~-68.10 ~0.00 ~86.64 ~ ~ ~ 0 0 force
 execute as @a[scores={star=109}] run particle end_rod ~-68.11 ~0.00 ~86.68 ~ ~ ~ 0 0 force
 execute as @a[scores={star=109}] run particle end_rod ~-68.11 ~0.00 ~86.72 ~ ~ ~ 0 0 force
@@ -207,7 +207,7 @@ execute as @a[scores={star=109}] run particle end_rod ~-68.18 ~0.00 ~87.28 ~ ~ ~
 execute as @a[scores={star=109}] run particle end_rod ~-68.19 ~0.00 ~87.32 ~ ~ ~ 0 0 force
 execute as @a[scores={star=109}] run particle end_rod ~-68.19 ~0.00 ~87.36 ~ ~ ~ 0 0 force
 execute as @a[scores={star=109}] run particle end_rod ~-68.19 ~0.00 ~87.40 ~ ~ ~ 0 0 force
-execute as @a[scores={star=109}] run tp @s ~-60 ~10 ~57 0 30
+execute as @a[scores={star=109}] run tp @s ~-60 ~10 ~57.40 0 30
 execute as @a[scores={star=110}] run particle end_rod ~-68.20 ~0.00 ~87.44 ~ ~ ~ 0 0 force
 execute as @a[scores={star=110}] run particle end_rod ~-68.20 ~0.00 ~87.48 ~ ~ ~ 0 0 force
 execute as @a[scores={star=110}] run particle end_rod ~-68.21 ~0.00 ~87.52 ~ ~ ~ 0 0 force
@@ -228,7 +228,7 @@ execute as @a[scores={star=110}] run particle end_rod ~-68.28 ~0.00 ~88.08 ~ ~ ~
 execute as @a[scores={star=110}] run particle end_rod ~-68.28 ~0.00 ~88.12 ~ ~ ~ 0 0 force
 execute as @a[scores={star=110}] run particle end_rod ~-68.29 ~0.00 ~88.16 ~ ~ ~ 0 0 force
 execute as @a[scores={star=110}] run particle end_rod ~-68.30 ~0.00 ~88.20 ~ ~ ~ 0 0 force
-execute as @a[scores={star=110}] run tp @s ~-60 ~10 ~58 0 30
+execute as @a[scores={star=110}] run tp @s ~-60 ~10 ~58.20 0 30
 execute as @a[scores={star=111}] run particle end_rod ~-68.30 ~0.00 ~88.24 ~ ~ ~ 0 0 force
 execute as @a[scores={star=111}] run particle end_rod ~-68.31 ~0.00 ~88.28 ~ ~ ~ 0 0 force
 execute as @a[scores={star=111}] run particle end_rod ~-68.31 ~0.00 ~88.32 ~ ~ ~ 0 0 force
@@ -249,7 +249,7 @@ execute as @a[scores={star=111}] run particle end_rod ~-68.38 ~0.00 ~88.88 ~ ~ ~
 execute as @a[scores={star=111}] run particle end_rod ~-68.39 ~0.00 ~88.92 ~ ~ ~ 0 0 force
 execute as @a[scores={star=111}] run particle end_rod ~-68.39 ~0.00 ~88.96 ~ ~ ~ 0 0 force
 execute as @a[scores={star=111}] run particle end_rod ~-68.39 ~0.00 ~89.00 ~ ~ ~ 0 0 force
-execute as @a[scores={star=111}] run tp @s ~-60 ~10 ~59 0 30
+execute as @a[scores={star=111}] run tp @s ~-60 ~10 ~59.00 0 30
 execute as @a[scores={star=112}] run particle end_rod ~-68.40 ~0.00 ~89.04 ~ ~ ~ 0 0 force
 execute as @a[scores={star=112}] run particle end_rod ~-68.41 ~0.00 ~89.08 ~ ~ ~ 0 0 force
 execute as @a[scores={star=112}] run particle end_rod ~-68.41 ~0.00 ~89.12 ~ ~ ~ 0 0 force
@@ -270,7 +270,7 @@ execute as @a[scores={star=112}] run particle end_rod ~-68.48 ~0.00 ~89.68 ~ ~ ~
 execute as @a[scores={star=112}] run particle end_rod ~-68.48 ~0.00 ~89.72 ~ ~ ~ 0 0 force
 execute as @a[scores={star=112}] run particle end_rod ~-68.49 ~0.00 ~89.76 ~ ~ ~ 0 0 force
 execute as @a[scores={star=112}] run particle end_rod ~-68.50 ~0.00 ~89.80 ~ ~ ~ 0 0 force
-execute as @a[scores={star=112}] run tp @s ~-60 ~10 ~59 0 30
+execute as @a[scores={star=112}] run tp @s ~-60 ~10 ~59.80 0 30
 execute as @a[scores={star=113}] run particle end_rod ~-68.50 ~0.00 ~89.84 ~ ~ ~ 0 0 force
 execute as @a[scores={star=113}] run particle end_rod ~-68.50 ~0.00 ~89.88 ~ ~ ~ 0 0 force
 execute as @a[scores={star=113}] run particle end_rod ~-68.51 ~0.00 ~89.92 ~ ~ ~ 0 0 force
@@ -291,7 +291,7 @@ execute as @a[scores={star=113}] run particle end_rod ~-68.58 ~0.00 ~90.48 ~ ~ ~
 execute as @a[scores={star=113}] run particle end_rod ~-68.58 ~0.00 ~90.52 ~ ~ ~ 0 0 force
 execute as @a[scores={star=113}] run particle end_rod ~-68.59 ~0.00 ~90.56 ~ ~ ~ 0 0 force
 execute as @a[scores={star=113}] run particle end_rod ~-68.59 ~0.00 ~90.60 ~ ~ ~ 0 0 force
-execute as @a[scores={star=113}] run tp @s ~-60 ~10 ~60 0 30
+execute as @a[scores={star=113}] run tp @s ~-60 ~10 ~60.60 0 30
 execute as @a[scores={star=114}] run particle end_rod ~-68.60 ~0.00 ~90.64 ~ ~ ~ 0 0 force
 execute as @a[scores={star=114}] run particle end_rod ~-68.61 ~0.00 ~90.68 ~ ~ ~ 0 0 force
 execute as @a[scores={star=114}] run particle end_rod ~-68.61 ~0.00 ~90.72 ~ ~ ~ 0 0 force
@@ -312,7 +312,7 @@ execute as @a[scores={star=114}] run particle end_rod ~-68.68 ~0.00 ~91.28 ~ ~ ~
 execute as @a[scores={star=114}] run particle end_rod ~-68.69 ~0.00 ~91.32 ~ ~ ~ 0 0 force
 execute as @a[scores={star=114}] run particle end_rod ~-68.69 ~0.00 ~91.36 ~ ~ ~ 0 0 force
 execute as @a[scores={star=114}] run particle end_rod ~-68.69 ~0.00 ~91.40 ~ ~ ~ 0 0 force
-execute as @a[scores={star=114}] run tp @s ~-60 ~10 ~61 0 30
+execute as @a[scores={star=114}] run tp @s ~-60 ~10 ~61.40 0 30
 execute as @a[scores={star=115}] run particle end_rod ~-68.70 ~0.00 ~91.44 ~ ~ ~ 0 0 force
 execute as @a[scores={star=115}] run particle end_rod ~-68.70 ~0.00 ~91.48 ~ ~ ~ 0 0 force
 execute as @a[scores={star=115}] run particle end_rod ~-68.71 ~0.00 ~91.52 ~ ~ ~ 0 0 force
@@ -333,7 +333,7 @@ execute as @a[scores={star=115}] run particle end_rod ~-68.78 ~0.00 ~92.08 ~ ~ ~
 execute as @a[scores={star=115}] run particle end_rod ~-68.78 ~0.00 ~92.12 ~ ~ ~ 0 0 force
 execute as @a[scores={star=115}] run particle end_rod ~-68.79 ~0.00 ~92.16 ~ ~ ~ 0 0 force
 execute as @a[scores={star=115}] run particle end_rod ~-68.80 ~0.00 ~92.20 ~ ~ ~ 0 0 force
-execute as @a[scores={star=115}] run tp @s ~-60 ~10 ~62 0 30
+execute as @a[scores={star=115}] run tp @s ~-60 ~10 ~62.20 0 30
 execute as @a[scores={star=116}] run particle end_rod ~-68.80 ~0.00 ~92.24 ~ ~ ~ 0 0 force
 execute as @a[scores={star=116}] run particle end_rod ~-68.81 ~0.00 ~92.28 ~ ~ ~ 0 0 force
 execute as @a[scores={star=116}] run particle end_rod ~-68.81 ~0.00 ~92.32 ~ ~ ~ 0 0 force
@@ -354,7 +354,7 @@ execute as @a[scores={star=116}] run particle end_rod ~-68.88 ~0.00 ~92.88 ~ ~ ~
 execute as @a[scores={star=116}] run particle end_rod ~-68.89 ~0.00 ~92.92 ~ ~ ~ 0 0 force
 execute as @a[scores={star=116}] run particle end_rod ~-68.89 ~0.00 ~92.96 ~ ~ ~ 0 0 force
 execute as @a[scores={star=116}] run particle end_rod ~-68.89 ~0.00 ~93.00 ~ ~ ~ 0 0 force
-execute as @a[scores={star=116}] run tp @s ~-60 ~10 ~63 0 30
+execute as @a[scores={star=116}] run tp @s ~-60 ~10 ~63.00 0 30
 execute as @a[scores={star=117}] run particle end_rod ~-68.90 ~0.00 ~93.04 ~ ~ ~ 0 0 force
 execute as @a[scores={star=117}] run particle end_rod ~-68.91 ~0.00 ~93.08 ~ ~ ~ 0 0 force
 execute as @a[scores={star=117}] run particle end_rod ~-68.91 ~0.00 ~93.12 ~ ~ ~ 0 0 force
@@ -375,7 +375,7 @@ execute as @a[scores={star=117}] run particle end_rod ~-68.98 ~0.00 ~93.68 ~ ~ ~
 execute as @a[scores={star=117}] run particle end_rod ~-68.98 ~0.00 ~93.72 ~ ~ ~ 0 0 force
 execute as @a[scores={star=117}] run particle end_rod ~-68.99 ~0.00 ~93.76 ~ ~ ~ 0 0 force
 execute as @a[scores={star=117}] run particle end_rod ~-69.00 ~0.00 ~93.80 ~ ~ ~ 0 0 force
-execute as @a[scores={star=117}] run tp @s ~-60 ~10 ~63 0 30
+execute as @a[scores={star=117}] run tp @s ~-60 ~10 ~63.80 0 30
 execute as @a[scores={star=118}] run particle end_rod ~-70.50 ~0.00 ~93.80 ~ ~ ~ 0 0 force
 execute as @a[scores={star=118}] run particle end_rod ~-70.50 ~0.00 ~93.80 ~ ~ ~ 0 0 force
 execute as @a[scores={star=118}] run particle end_rod ~-69.50 ~0.00 ~93.80 ~ ~ ~ 0 0 force
@@ -581,7 +581,7 @@ execute as @a[scores={star=118}] run particle end_rod ~-69.00 ~0.00 ~94.44 ~ ~ ~
 execute as @a[scores={star=118}] run particle end_rod ~-69.00 ~0.00 ~94.48 ~ ~ ~ 0 0 force
 execute as @a[scores={star=118}] run particle end_rod ~-69.00 ~0.00 ~94.52 ~ ~ ~ 0 0 force
 execute as @a[scores={star=118}] run particle end_rod ~-69.00 ~0.00 ~94.56 ~ ~ ~ 0 0 force
-execute as @a[scores={star=118}] run tp @s ~-60 ~10 ~64 0 30
+execute as @a[scores={star=118}] run tp @s ~-60 ~10 ~64.56 0 30
 execute as @a[scores={star=119}] run particle end_rod ~-69.00 ~0.00 ~94.60 ~ ~ ~ 0 0 force
 execute as @a[scores={star=119}] run particle end_rod ~-69.00 ~0.00 ~94.64 ~ ~ ~ 0 0 force
 execute as @a[scores={star=119}] run particle end_rod ~-69.00 ~0.00 ~94.68 ~ ~ ~ 0 0 force
@@ -602,7 +602,7 @@ execute as @a[scores={star=119}] run particle end_rod ~-69.00 ~0.00 ~95.24 ~ ~ ~
 execute as @a[scores={star=119}] run particle end_rod ~-69.00 ~0.00 ~95.28 ~ ~ ~ 0 0 force
 execute as @a[scores={star=119}] run particle end_rod ~-69.00 ~0.00 ~95.32 ~ ~ ~ 0 0 force
 execute as @a[scores={star=119}] run particle end_rod ~-69.00 ~0.00 ~95.36 ~ ~ ~ 0 0 force
-execute as @a[scores={star=119}] run tp @s ~-60 ~10 ~65 0 30
+execute as @a[scores={star=119}] run tp @s ~-60 ~10 ~65.36 0 30
 execute as @a[scores={star=100}] run particle flame ~-54.38 ~0.00 ~79.32 ~ ~ ~ 0 0 force
 execute as @a[scores={star=100}] run particle flame ~-54.37 ~0.00 ~79.36 ~ ~ ~ 0 0 force
 execute as @a[scores={star=100}] run particle flame ~-54.35 ~0.00 ~79.40 ~ ~ ~ 0 0 force
@@ -623,7 +623,7 @@ execute as @a[scores={star=100}] run particle flame ~-54.15 ~0.00 ~79.96 ~ ~ ~ 0
 execute as @a[scores={star=100}] run particle flame ~-54.13 ~0.00 ~80.00 ~ ~ ~ 0 0 force
 execute as @a[scores={star=100}] run particle flame ~-54.12 ~0.00 ~80.04 ~ ~ ~ 0 0 force
 execute as @a[scores={star=100}] run particle flame ~-54.10 ~0.00 ~80.08 ~ ~ ~ 0 0 force
-execute as @a[scores={star=100}] run tp @s ~-60 ~10 ~50 0 30
+execute as @a[scores={star=100}] run tp @s ~-60 ~10 ~50.08 0 30
 execute as @a[scores={star=101}] run particle flame ~-54.09 ~0.00 ~80.12 ~ ~ ~ 0 0 force
 execute as @a[scores={star=101}] run particle flame ~-54.07 ~0.00 ~80.16 ~ ~ ~ 0 0 force
 execute as @a[scores={star=101}] run particle flame ~-54.06 ~0.00 ~80.20 ~ ~ ~ 0 0 force
@@ -644,7 +644,7 @@ execute as @a[scores={star=101}] run particle flame ~-53.85 ~0.00 ~80.76 ~ ~ ~ 0
 execute as @a[scores={star=101}] run particle flame ~-53.83 ~0.00 ~80.80 ~ ~ ~ 0 0 force
 execute as @a[scores={star=101}] run particle flame ~-53.82 ~0.00 ~80.84 ~ ~ ~ 0 0 force
 execute as @a[scores={star=101}] run particle flame ~-53.80 ~0.00 ~80.88 ~ ~ ~ 0 0 force
-execute as @a[scores={star=101}] run tp @s ~-60 ~10 ~50 0 30
+execute as @a[scores={star=101}] run tp @s ~-60 ~10 ~50.88 0 30
 execute as @a[scores={star=102}] run particle flame ~-53.79 ~0.00 ~80.92 ~ ~ ~ 0 0 force
 execute as @a[scores={star=102}] run particle flame ~-53.77 ~0.00 ~80.96 ~ ~ ~ 0 0 force
 execute as @a[scores={star=102}] run particle flame ~-53.76 ~0.00 ~81.00 ~ ~ ~ 0 0 force
@@ -665,7 +665,7 @@ execute as @a[scores={star=102}] run particle flame ~-53.55 ~0.00 ~81.56 ~ ~ ~ 0
 execute as @a[scores={star=102}] run particle flame ~-53.53 ~0.00 ~81.60 ~ ~ ~ 0 0 force
 execute as @a[scores={star=102}] run particle flame ~-53.52 ~0.00 ~81.64 ~ ~ ~ 0 0 force
 execute as @a[scores={star=102}] run particle flame ~-53.50 ~0.00 ~81.68 ~ ~ ~ 0 0 force
-execute as @a[scores={star=102}] run tp @s ~-60 ~10 ~51 0 30
+execute as @a[scores={star=102}] run tp @s ~-60 ~10 ~51.68 0 30
 execute as @a[scores={star=103}] run particle flame ~-53.49 ~0.00 ~81.72 ~ ~ ~ 0 0 force
 execute as @a[scores={star=103}] run particle flame ~-53.48 ~0.00 ~81.76 ~ ~ ~ 0 0 force
 execute as @a[scores={star=103}] run particle flame ~-53.46 ~0.00 ~81.80 ~ ~ ~ 0 0 force
@@ -686,7 +686,7 @@ execute as @a[scores={star=103}] run particle flame ~-53.25 ~0.00 ~82.36 ~ ~ ~ 0
 execute as @a[scores={star=103}] run particle flame ~-53.24 ~0.00 ~82.40 ~ ~ ~ 0 0 force
 execute as @a[scores={star=103}] run particle flame ~-53.22 ~0.00 ~82.44 ~ ~ ~ 0 0 force
 execute as @a[scores={star=103}] run particle flame ~-53.21 ~0.00 ~82.48 ~ ~ ~ 0 0 force
-execute as @a[scores={star=103}] run tp @s ~-60 ~10 ~52 0 30
+execute as @a[scores={star=103}] run tp @s ~-60 ~10 ~52.48 0 30
 execute as @a[scores={star=104}] run particle flame ~-53.19 ~0.00 ~82.52 ~ ~ ~ 0 0 force
 execute as @a[scores={star=104}] run particle flame ~-53.18 ~0.00 ~82.56 ~ ~ ~ 0 0 force
 execute as @a[scores={star=104}] run particle flame ~-53.16 ~0.00 ~82.60 ~ ~ ~ 0 0 force
@@ -707,7 +707,7 @@ execute as @a[scores={star=104}] run particle flame ~-52.95 ~0.00 ~83.16 ~ ~ ~ 0
 execute as @a[scores={star=104}] run particle flame ~-52.94 ~0.00 ~83.20 ~ ~ ~ 0 0 force
 execute as @a[scores={star=104}] run particle flame ~-52.92 ~0.00 ~83.24 ~ ~ ~ 0 0 force
 execute as @a[scores={star=104}] run particle flame ~-52.91 ~0.00 ~83.28 ~ ~ ~ 0 0 force
-execute as @a[scores={star=104}] run tp @s ~-60 ~10 ~53 0 30
+execute as @a[scores={star=104}] run tp @s ~-60 ~10 ~53.28 0 30
 execute as @a[scores={star=105}] run particle flame ~-52.89 ~0.00 ~83.32 ~ ~ ~ 0 0 force
 execute as @a[scores={star=105}] run particle flame ~-52.88 ~0.00 ~83.36 ~ ~ ~ 0 0 force
 execute as @a[scores={star=105}] run particle flame ~-52.86 ~0.00 ~83.40 ~ ~ ~ 0 0 force
@@ -728,7 +728,7 @@ execute as @a[scores={star=105}] run particle flame ~-52.66 ~0.00 ~83.96 ~ ~ ~ 0
 execute as @a[scores={star=105}] run particle flame ~-52.64 ~0.00 ~84.00 ~ ~ ~ 0 0 force
 execute as @a[scores={star=105}] run particle flame ~-52.63 ~0.00 ~84.04 ~ ~ ~ 0 0 force
 execute as @a[scores={star=105}] run particle flame ~-52.61 ~0.00 ~84.08 ~ ~ ~ 0 0 force
-execute as @a[scores={star=105}] run tp @s ~-60 ~10 ~54 0 30
+execute as @a[scores={star=105}] run tp @s ~-60 ~10 ~54.08 0 30
 execute as @a[scores={star=106}] run particle flame ~-52.60 ~0.00 ~84.12 ~ ~ ~ 0 0 force
 execute as @a[scores={star=106}] run particle flame ~-52.58 ~0.00 ~84.16 ~ ~ ~ 0 0 force
 execute as @a[scores={star=106}] run particle flame ~-52.57 ~0.00 ~84.20 ~ ~ ~ 0 0 force
@@ -749,7 +749,7 @@ execute as @a[scores={star=106}] run particle flame ~-52.36 ~0.00 ~84.76 ~ ~ ~ 0
 execute as @a[scores={star=106}] run particle flame ~-52.34 ~0.00 ~84.80 ~ ~ ~ 0 0 force
 execute as @a[scores={star=106}] run particle flame ~-52.33 ~0.00 ~84.84 ~ ~ ~ 0 0 force
 execute as @a[scores={star=106}] run particle flame ~-52.31 ~0.00 ~84.88 ~ ~ ~ 0 0 force
-execute as @a[scores={star=106}] run tp @s ~-60 ~10 ~54 0 30
+execute as @a[scores={star=106}] run tp @s ~-60 ~10 ~54.88 0 30
 execute as @a[scores={star=107}] run particle flame ~-52.30 ~0.00 ~84.92 ~ ~ ~ 0 0 force
 execute as @a[scores={star=107}] run particle flame ~-52.28 ~0.00 ~84.96 ~ ~ ~ 0 0 force
 execute as @a[scores={star=107}] run particle flame ~-52.27 ~0.00 ~85.00 ~ ~ ~ 0 0 force
@@ -770,7 +770,7 @@ execute as @a[scores={star=107}] run particle flame ~-52.06 ~0.00 ~85.56 ~ ~ ~ 0
 execute as @a[scores={star=107}] run particle flame ~-52.04 ~0.00 ~85.60 ~ ~ ~ 0 0 force
 execute as @a[scores={star=107}] run particle flame ~-52.03 ~0.00 ~85.64 ~ ~ ~ 0 0 force
 execute as @a[scores={star=107}] run particle flame ~-52.01 ~0.00 ~85.68 ~ ~ ~ 0 0 force
-execute as @a[scores={star=107}] run tp @s ~-60 ~10 ~55 0 30
+execute as @a[scores={star=107}] run tp @s ~-60 ~10 ~55.68 0 30
 execute as @a[scores={star=108}] run particle flame ~-53.51 ~0.00 ~85.68 ~ ~ ~ 0 0 force
 execute as @a[scores={star=108}] run particle flame ~-53.51 ~0.00 ~85.68 ~ ~ ~ 0 0 force
 execute as @a[scores={star=108}] run particle flame ~-52.51 ~0.00 ~85.68 ~ ~ ~ 0 0 force
@@ -976,7 +976,7 @@ execute as @a[scores={star=108}] run particle flame ~-52.09 ~0.00 ~86.32 ~ ~ ~ 0
 execute as @a[scores={star=108}] run particle flame ~-52.09 ~0.00 ~86.36 ~ ~ ~ 0 0 force
 execute as @a[scores={star=108}] run particle flame ~-52.10 ~0.00 ~86.40 ~ ~ ~ 0 0 force
 execute as @a[scores={star=108}] run particle flame ~-52.10 ~0.00 ~86.44 ~ ~ ~ 0 0 force
-execute as @a[scores={star=108}] run tp @s ~-60 ~10 ~56 0 30
+execute as @a[scores={star=108}] run tp @s ~-60 ~10 ~56.44 0 30
 execute as @a[scores={star=109}] run particle flame ~-52.11 ~0.00 ~86.48 ~ ~ ~ 0 0 force
 execute as @a[scores={star=109}] run particle flame ~-52.11 ~0.00 ~86.52 ~ ~ ~ 0 0 force
 execute as @a[scores={star=109}] run particle flame ~-52.12 ~0.00 ~86.56 ~ ~ ~ 0 0 force
@@ -997,7 +997,7 @@ execute as @a[scores={star=109}] run particle flame ~-52.19 ~0.00 ~87.12 ~ ~ ~ 0
 execute as @a[scores={star=109}] run particle flame ~-52.19 ~0.00 ~87.16 ~ ~ ~ 0 0 force
 execute as @a[scores={star=109}] run particle flame ~-52.20 ~0.00 ~87.20 ~ ~ ~ 0 0 force
 execute as @a[scores={star=109}] run particle flame ~-52.20 ~0.00 ~87.24 ~ ~ ~ 0 0 force
-execute as @a[scores={star=109}] run tp @s ~-60 ~10 ~57 0 30
+execute as @a[scores={star=109}] run tp @s ~-60 ~10 ~57.24 0 30
 execute as @a[scores={star=110}] run particle flame ~-52.21 ~0.00 ~87.28 ~ ~ ~ 0 0 force
 execute as @a[scores={star=110}] run particle flame ~-52.21 ~0.00 ~87.32 ~ ~ ~ 0 0 force
 execute as @a[scores={star=110}] run particle flame ~-52.22 ~0.00 ~87.36 ~ ~ ~ 0 0 force
@@ -1018,7 +1018,7 @@ execute as @a[scores={star=110}] run particle flame ~-52.29 ~0.00 ~87.92 ~ ~ ~ 0
 execute as @a[scores={star=110}] run particle flame ~-52.29 ~0.00 ~87.96 ~ ~ ~ 0 0 force
 execute as @a[scores={star=110}] run particle flame ~-52.30 ~0.00 ~88.00 ~ ~ ~ 0 0 force
 execute as @a[scores={star=110}] run particle flame ~-52.30 ~0.00 ~88.04 ~ ~ ~ 0 0 force
-execute as @a[scores={star=110}] run tp @s ~-60 ~10 ~58 0 30
+execute as @a[scores={star=110}] run tp @s ~-60 ~10 ~58.04 0 30
 execute as @a[scores={star=111}] run particle flame ~-52.31 ~0.00 ~88.08 ~ ~ ~ 0 0 force
 execute as @a[scores={star=111}] run particle flame ~-52.31 ~0.00 ~88.12 ~ ~ ~ 0 0 force
 execute as @a[scores={star=111}] run particle flame ~-52.32 ~0.00 ~88.16 ~ ~ ~ 0 0 force
@@ -1039,7 +1039,7 @@ execute as @a[scores={star=111}] run particle flame ~-52.39 ~0.00 ~88.72 ~ ~ ~ 0
 execute as @a[scores={star=111}] run particle flame ~-52.39 ~0.00 ~88.76 ~ ~ ~ 0 0 force
 execute as @a[scores={star=111}] run particle flame ~-52.40 ~0.00 ~88.80 ~ ~ ~ 0 0 force
 execute as @a[scores={star=111}] run particle flame ~-52.40 ~0.00 ~88.84 ~ ~ ~ 0 0 force
-execute as @a[scores={star=111}] run tp @s ~-60 ~10 ~58 0 30
+execute as @a[scores={star=111}] run tp @s ~-60 ~10 ~58.84 0 30
 execute as @a[scores={star=112}] run particle flame ~-52.41 ~0.00 ~88.88 ~ ~ ~ 0 0 force
 execute as @a[scores={star=112}] run particle flame ~-52.41 ~0.00 ~88.92 ~ ~ ~ 0 0 force
 execute as @a[scores={star=112}] run particle flame ~-52.42 ~0.00 ~88.96 ~ ~ ~ 0 0 force
@@ -1060,7 +1060,7 @@ execute as @a[scores={star=112}] run particle flame ~-52.49 ~0.00 ~89.52 ~ ~ ~ 0
 execute as @a[scores={star=112}] run particle flame ~-52.49 ~0.00 ~89.56 ~ ~ ~ 0 0 force
 execute as @a[scores={star=112}] run particle flame ~-52.50 ~0.00 ~89.60 ~ ~ ~ 0 0 force
 execute as @a[scores={star=112}] run particle flame ~-52.50 ~0.00 ~89.64 ~ ~ ~ 0 0 force
-execute as @a[scores={star=112}] run tp @s ~-60 ~10 ~59 0 30
+execute as @a[scores={star=112}] run tp @s ~-60 ~10 ~59.64 0 30
 execute as @a[scores={star=113}] run particle flame ~-52.50 ~0.00 ~89.68 ~ ~ ~ 0 0 force
 execute as @a[scores={star=113}] run particle flame ~-52.51 ~0.00 ~89.72 ~ ~ ~ 0 0 force
 execute as @a[scores={star=113}] run particle flame ~-52.51 ~0.00 ~89.76 ~ ~ ~ 0 0 force
@@ -1081,7 +1081,7 @@ execute as @a[scores={star=113}] run particle flame ~-52.58 ~0.00 ~90.32 ~ ~ ~ 0
 execute as @a[scores={star=113}] run particle flame ~-52.59 ~0.00 ~90.36 ~ ~ ~ 0 0 force
 execute as @a[scores={star=113}] run particle flame ~-52.59 ~0.00 ~90.40 ~ ~ ~ 0 0 force
 execute as @a[scores={star=113}] run particle flame ~-52.60 ~0.00 ~90.44 ~ ~ ~ 0 0 force
-execute as @a[scores={star=113}] run tp @s ~-60 ~10 ~60 0 30
+execute as @a[scores={star=113}] run tp @s ~-60 ~10 ~60.44 0 30
 execute as @a[scores={star=114}] run particle flame ~-52.60 ~0.00 ~90.48 ~ ~ ~ 0 0 force
 execute as @a[scores={star=114}] run particle flame ~-52.61 ~0.00 ~90.52 ~ ~ ~ 0 0 force
 execute as @a[scores={star=114}] run particle flame ~-52.61 ~0.00 ~90.56 ~ ~ ~ 0 0 force
@@ -1102,7 +1102,7 @@ execute as @a[scores={star=114}] run particle flame ~-52.68 ~0.00 ~91.12 ~ ~ ~ 0
 execute as @a[scores={star=114}] run particle flame ~-52.69 ~0.00 ~91.16 ~ ~ ~ 0 0 force
 execute as @a[scores={star=114}] run particle flame ~-52.69 ~0.00 ~91.20 ~ ~ ~ 0 0 force
 execute as @a[scores={star=114}] run particle flame ~-52.70 ~0.00 ~91.24 ~ ~ ~ 0 0 force
-execute as @a[scores={star=114}] run tp @s ~-60 ~10 ~61 0 30
+execute as @a[scores={star=114}] run tp @s ~-60 ~10 ~61.24 0 30
 execute as @a[scores={star=115}] run particle flame ~-52.70 ~0.00 ~91.28 ~ ~ ~ 0 0 force
 execute as @a[scores={star=115}] run particle flame ~-52.71 ~0.00 ~91.32 ~ ~ ~ 0 0 force
 execute as @a[scores={star=115}] run particle flame ~-52.71 ~0.00 ~91.36 ~ ~ ~ 0 0 force
@@ -1123,7 +1123,7 @@ execute as @a[scores={star=115}] run particle flame ~-52.78 ~0.00 ~91.92 ~ ~ ~ 0
 execute as @a[scores={star=115}] run particle flame ~-52.79 ~0.00 ~91.96 ~ ~ ~ 0 0 force
 execute as @a[scores={star=115}] run particle flame ~-52.79 ~0.00 ~92.00 ~ ~ ~ 0 0 force
 execute as @a[scores={star=115}] run particle flame ~-52.80 ~0.00 ~92.04 ~ ~ ~ 0 0 force
-execute as @a[scores={star=115}] run tp @s ~-60 ~10 ~62 0 30
+execute as @a[scores={star=115}] run tp @s ~-60 ~10 ~62.04 0 30
 execute as @a[scores={star=116}] run particle flame ~-52.80 ~0.00 ~92.08 ~ ~ ~ 0 0 force
 execute as @a[scores={star=116}] run particle flame ~-52.81 ~0.00 ~92.12 ~ ~ ~ 0 0 force
 execute as @a[scores={star=116}] run particle flame ~-52.81 ~0.00 ~92.16 ~ ~ ~ 0 0 force
@@ -1144,7 +1144,7 @@ execute as @a[scores={star=116}] run particle flame ~-52.88 ~0.00 ~92.72 ~ ~ ~ 0
 execute as @a[scores={star=116}] run particle flame ~-52.89 ~0.00 ~92.76 ~ ~ ~ 0 0 force
 execute as @a[scores={star=116}] run particle flame ~-52.89 ~0.00 ~92.80 ~ ~ ~ 0 0 force
 execute as @a[scores={star=116}] run particle flame ~-52.90 ~0.00 ~92.84 ~ ~ ~ 0 0 force
-execute as @a[scores={star=116}] run tp @s ~-60 ~10 ~62 0 30
+execute as @a[scores={star=116}] run tp @s ~-60 ~10 ~62.84 0 30
 execute as @a[scores={star=117}] run particle flame ~-52.90 ~0.00 ~92.88 ~ ~ ~ 0 0 force
 execute as @a[scores={star=117}] run particle flame ~-52.91 ~0.00 ~92.92 ~ ~ ~ 0 0 force
 execute as @a[scores={star=117}] run particle flame ~-52.91 ~0.00 ~92.96 ~ ~ ~ 0 0 force
@@ -1165,7 +1165,7 @@ execute as @a[scores={star=117}] run particle flame ~-52.98 ~0.00 ~93.52 ~ ~ ~ 0
 execute as @a[scores={star=117}] run particle flame ~-52.99 ~0.00 ~93.56 ~ ~ ~ 0 0 force
 execute as @a[scores={star=117}] run particle flame ~-52.99 ~0.00 ~93.60 ~ ~ ~ 0 0 force
 execute as @a[scores={star=117}] run particle flame ~-53.00 ~0.00 ~93.64 ~ ~ ~ 0 0 force
-execute as @a[scores={star=117}] run tp @s ~-60 ~10 ~63 0 30
+execute as @a[scores={star=117}] run tp @s ~-60 ~10 ~63.64 0 30
 execute as @a[scores={star=118}] run particle flame ~-54.50 ~0.00 ~93.64 ~ ~ ~ 0 0 force
 execute as @a[scores={star=118}] run particle flame ~-54.50 ~0.00 ~93.64 ~ ~ ~ 0 0 force
 execute as @a[scores={star=118}] run particle flame ~-53.50 ~0.00 ~93.64 ~ ~ ~ 0 0 force
@@ -1371,7 +1371,7 @@ execute as @a[scores={star=118}] run particle flame ~-53.32 ~0.00 ~94.28 ~ ~ ~ 0
 execute as @a[scores={star=118}] run particle flame ~-53.34 ~0.00 ~94.32 ~ ~ ~ 0 0 force
 execute as @a[scores={star=118}] run particle flame ~-53.36 ~0.00 ~94.36 ~ ~ ~ 0 0 force
 execute as @a[scores={star=118}] run particle flame ~-53.38 ~0.00 ~94.40 ~ ~ ~ 0 0 force
-execute as @a[scores={star=118}] run tp @s ~-60 ~10 ~64 0 30
+execute as @a[scores={star=118}] run tp @s ~-60 ~10 ~64.40 0 30
 execute as @a[scores={star=119}] run particle flame ~-53.40 ~0.00 ~94.44 ~ ~ ~ 0 0 force
 execute as @a[scores={star=119}] run particle flame ~-53.42 ~0.00 ~94.48 ~ ~ ~ 0 0 force
 execute as @a[scores={star=119}] run particle flame ~-53.44 ~0.00 ~94.52 ~ ~ ~ 0 0 force
@@ -1392,4 +1392,4 @@ execute as @a[scores={star=119}] run particle flame ~-53.72 ~0.00 ~95.08 ~ ~ ~ 0
 execute as @a[scores={star=119}] run particle flame ~-53.74 ~0.00 ~95.12 ~ ~ ~ 0 0 force
 execute as @a[scores={star=119}] run particle flame ~-53.76 ~0.00 ~95.16 ~ ~ ~ 0 0 force
 execute as @a[scores={star=119}] run particle flame ~-53.78 ~0.00 ~95.20 ~ ~ ~ 0 0 force
-execute as @a[scores={star=119}] run tp @s ~-60 ~10 ~65 0 30
+execute as @a[scores={star=119}] run tp @s ~-60 ~10 ~65.20 0 30

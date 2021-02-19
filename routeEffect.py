@@ -55,7 +55,7 @@ def straight(pos, newpos, speed, particle, funName, allticks, btn):
                 fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0 0 force\n' % (
                     funName, allticks, particle, -x1, y, z1))
         with open(mainUrl, 'a') as fp:
-            fp.write('execute as @a[scores={%s=%d}] run tp @s ~%d ~%d ~%d 0 30\n' % (
+            fp.write('execute as @a[scores={%s=%d}] run tp @s ~%d ~%d ~%.2f 0 30\n' % (
                 funName, allticks, -60, 10, z1-30))
         allticks += 1
     effectpos = [x1, y, z1]
