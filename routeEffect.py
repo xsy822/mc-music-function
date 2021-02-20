@@ -33,9 +33,9 @@ def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, e
         if effectName == 'star':
             effect.star(funName, effectParticle,
                         effectpos, effectTicks, block, r)
-        elif effectName == 'doubleStar':
-            effect.doubleStar(funName, effectParticle,
-                              effectpos, effectTicks, block, r)
+        elif effectName == 'starUp':
+            effect.starUp(funName, effectParticle,
+                          effectpos, effectTicks, block, r)
 
     # 音色
     with open(mainUrl, 'a') as fp:

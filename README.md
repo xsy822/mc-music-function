@@ -61,7 +61,7 @@ routeEffect
 effectName
 
 - star _(**五芒星阵**)_
-- doubleSatr _(**双五芒星**)_
+- starUp _(**上升的五芒星**)_
 
 sound
 
