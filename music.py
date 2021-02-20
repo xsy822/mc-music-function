@@ -23,7 +23,7 @@ class Track:
         if m:
             init(self.funName)
 
-    def add(self, tone, delay, routeEffect, routeParticle, effectName, effectParticle, sound,  r=1, btn=False):
+    def add(self, tone, delay, routeEffect, routeParticle, effectName, effectParticle, sound, block, r=1, btn=False):
         """增加一个音符
             - tone:音调，降1开始的递增数(1,2,3...)
             - delay:上一个与下一个音符间的间隔，单位1/32全音符
@@ -39,7 +39,7 @@ class Track:
             self.delay = delay
         newpos = [tone, self.pos[1], self.pos[2] + self.delay]
         self.allticks, self.mticks, self.pos = route.route(self.pos, newpos, self.speed, routeEffect, routeParticle,
-                                                           self.funName, effectName, effectParticle, tone, sound, self.allticks, self.mticks, r, btn)
+                                                           self.funName, effectName, effectParticle, tone, sound, self.allticks, self.mticks, block, r, btn)
         print(self.pos)
 
 
@@ -47,14 +47,14 @@ def init(funName):
     """创建基础function文件夹路径
         - funName:函数名称
     """
-    url = 'functions\\' + funName + '\\main'
+    url = 'xsy\\data\\xsy\\functions\\' + funName + '\\main'
     if not os.path.exists(url):
         os.makedirs(url)
-    url = 'functions\\' + funName + '\\init.mcfunction'
+    url = 'xsy\\data\\xsy\\functions\\' + funName + '\\init.mcfunction'
     with open(url, 'w') as fp:
         fp.write(
             'scoreboard objectives add %s dummy "%s"\nscoreboard players set @a %s 0' % (funName, funName, funName))
-    url = 'functions\\' + funName + '\\main.mcfunction'
+    url = 'xsy\\data\\xsy\\functions\\' + funName + '\\main.mcfunction'
     fp = open(url, 'w')
     fp.close()
 
@@ -68,11 +68,16 @@ for j in range(num):
         a = a.split()
         funName = a[0]
         routeEffect = a[1]
-        routeParticle = a[2].replace('&', ' ')
+        routeParticle = a[2].split('-')
+        for index, i in enumerate(routeParticle):
+            routeParticle[index] = i.replace('&', ' ')
         effectName = a[3]
-        effectParticle = a[4].replace('&', ' ')
+        effectParticle = a[4].split('-')
+        for index, i in enumerate(effectParticle):
+            effectParticle[index] = i.replace('&', ' ')
         sound = int(a[5])
-        a = a[6:]
+        block = a[6]
+        a = a[7:]
         for index, i in enumerate(a):
             if i[0] == 'd':
                 a[index-1] = 'c'+a[index-1]
@@ -87,30 +92,31 @@ for j in range(num):
     for i in a:
         if i[0] == 'c':
             mainTrack.add(int(i[1:]), delay, routeEffect, routeParticle,
-                          effectName, effectParticle, sound, btn=True)
+                          effectName, effectParticle, sound, block, btn=True)
         elif i[0] == 'd':
             delay = int(i[1:])
         else:
             mainTrack.add(int(i), delay, routeEffect, routeParticle,
-                          effectName, effectParticle, sound)
+                          effectName, effectParticle, block, sound)
     allticks = max(allticks, mainTrack.allticks)
 
 
 # 收尾
-url = 'functions\\' + mainTrack.funName + '\\main.mcfunction'
+url = 'xsy\\data\\xsy\\functions\\' + mainTrack.funName + '\\main.mcfunction'
 for i in range(int(allticks / 20 + 1)):
     with open(url, 'a') as fp:
         fp.write('execute as @a[scores={%s=%d..%d}] run function %s:%s/main/part%d\n' % (
-            mainTrack.funName, 20*i, 20*(i + 1), mainTrack.funName, mainTrack.funName, i))
+            mainTrack.funName, 20*i, 20*(i + 1), 'xsy', mainTrack.funName, i))
 
-# 玩家传送及视角固定
+# # 玩家传送及视角固定
 for i in range(allticks):
-    url = 'functions\\%s\\main\\part%d.mcfunction' % (
+    url = 'xsy\\data\\xsy\\functions\\%s\\main\\part%d.mcfunction' % (
         mainTrack.funName, int(i/20))
     with open(url, 'a') as fp:
         fp.write('execute as @a[scores={%s=%d}] run tp @s ~%d ~%d ~%.2f 0 40\n' %
-                 (funName, i, -60, 15, i*(speed/150)-20))
+                 (funName, i, -60, 15, i*(speed/150)-30))
 
-url = 'functions\\' + mainTrack.funName + '\\main.mcfunction'
+url = 'xsy\\data\\xsy\\functions\\' + mainTrack.funName + '\\main.mcfunction'
 with open(url, 'a') as fp:
     fp.write('scoreboard players add @a %s 1\n' % (mainTrack.funName))
+    fp.write('kill @e[type=item]\n')

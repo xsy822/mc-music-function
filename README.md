@@ -4,22 +4,20 @@
 
 ---
 
-mc-music-function 1.0
-2021/2/18 23:13
-正式完成，测试通过
-
 ## 文档
 
 ### 文件结构
 
 - `_pycache_` _(编译得到的 py 程序，effect.py 和 routeEffect.py，运行程序自动产生的)_
-- functions _(生成的 function 包，没有这个文件夹运行此程序也会自动产生)_
-  - star _(根据函数名生成的文件夹)_
-    - main
-      - part0.mcfunction _(主要效果实现)_
-      - ...
-    - init.mcfunction _(初始化计分板)_
-    - main.mcfunction _(增加计分用于计时及调用其他 function 的主干)_
+- xsy _(数据包名[数据包参考 mcwiki](https://minecraft-zh.gamepedia.com/%E6%95%B0%E6%8D%AE%E5%8C%85))_
+  - .... _(数据包的基本结构和文件)_
+    - functions _(生成的 function 包，没有这个文件夹运行此程序也会自动产生)_
+      - star _(根据函数名生成的文件夹)_
+        - main
+          - part0.mcfunction _(主要效果实现)_
+          - ...
+        - init.mcfunction _(初始化计分板)_
+        - main.mcfunction _(增加计分用于计时及调用其他 function 的主干)_
 - sounds _(音色资源包，必须有这个才能用本 function，音色资源出自 soma，由小世炎修改，节选适配本程序及 mc 1.13 以后版本)[资源包相关内容查看 mcwiki](https://minecraft-zh.gamepedia.com/%E8%B5%84%E6%BA%90%E5%8C%85)_
 - effect.py _(音符特效的支持文件)_
 - music.py _(此程序主要文件（入口），使用此程序即运行本文件)_
@@ -44,6 +42,7 @@ mc-music-function 1.0
 1. effectName _(音符特效)_
 1. effectParticle _(音符特效粒子名称)_
 1. sound _(音色代码)_
+1. block _(音符处的方块)_
 1. speed _(速度，拍/min)_
 
 乐谱：
@@ -56,11 +55,13 @@ mc-music-function 1.0
 
 routeEffect
 
-- straight _(**直线**，目前仅有)_
+- straight _(**直线**)_
+- oval _(**椭圆线**)_
 
 effectName
 
-- star _(**五芒星阵**，目前仅有)_
+- star _(**五芒星阵**)_
+- doubleSatr _(**双五芒星**)_
 
 sound
 

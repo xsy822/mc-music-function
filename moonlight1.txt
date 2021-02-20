@@ -1,4 +1,4 @@
-moonlight straight end_rod star end_rod 0 91
+moonlight oval end_rod star dripping_lava 0 air 91
 72 d8 71 d4 72 d4 79 d4 81 d4 81 d6 79 d2
 79 d4 74 d4 76 d4 77 d4 77 d6 76 d2 76 d8
 72 d8 71 d4 72 d4 76 d4 77 d4 77 d6 79 d2

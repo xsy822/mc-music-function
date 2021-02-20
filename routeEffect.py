@@ -1,7 +1,9 @@
+import random
+import math
 import effect
 
 
-def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, effectParticle, tone, sound, allticks, mticks, r, btn):
+def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, effectParticle, tone, sound, allticks, mticks, block, r, btn):
     """绘制轨道路径及音符特效
         - pos:三维坐标
         - newpos:目的地坐标
@@ -22,11 +24,18 @@ def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, e
     if routeEffect == 'straight':
         allticks, mticks, effectTicks, pos, effectpos, mainUrl = straight(
             pos, newpos, speed, routeParticle, funName, allticks, mticks, btn)
+    if routeEffect == 'oval':
+        allticks, mticks, effectTicks, pos, effectpos, mainUrl = oval(
+            pos, newpos, speed, routeParticle, funName, allticks, mticks, btn)
 
     # 特效
     with open(mainUrl, 'a') as fp:
         if effectName == 'star':
-            effect.star(funName, effectParticle, effectpos, effectTicks, r, fp)
+            effect.star(funName, effectParticle,
+                        effectpos, effectTicks, block, r)
+        elif effectName == 'doubleStar':
+            effect.doubleStar(funName, effectParticle,
+                              effectpos, effectTicks, block, r)
 
     # 音色
     with open(mainUrl, 'a') as fp:
@@ -54,14 +63,55 @@ def straight(pos, newpos, speed, particle, funName, allticks, mticks, btn):
         allticks += 1
         mticks -= 1
     for i in range(ticks):
-        for j in range(20):
-            x1, z1 = round(pos[0] + x * (i * 20 + j) / (ticks * 20),
-                           2), round(pos[2] + z * (i * 20 + j) / (ticks * 20), 2)
-            mainUrl = 'functions\\' + funName + '\\main\\part' + \
+        for j in range(10):
+            x1, z1 = round(pos[0] + x * (i * 10 + j) / (ticks * 10),
+                           2), round(pos[2] + z * (i * 10 + j) / (ticks * 10), 2)
+            mainUrl = 'xsy\\data\\xsy\\functions\\' + funName + '\\main\\part' + \
                 str(int(allticks/20)) + '.mcfunction'
             with open(mainUrl, 'a') as fp:
                 fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0 0 force\n' % (
-                    funName, allticks, particle, -x1, y, z1))
+                    funName, allticks, random.choice(particle), -x1, y, z1))
+        allticks += 1
+    effectpos = newpos
+    effectTicks = allticks
+    if btn:
+        pos = effectpos
+    else:
+        allticks -= ticks
+    return allticks, mticks, effectTicks, pos, effectpos, mainUrl
+
+
+def oval(pos, newpos, speed, particle, funName, allticks, mticks, btn):
+    """椭圆线
+    """
+    x, y, z = [i - j for i, j in zip(newpos, pos)]
+    ticks = int((z * 300) / (speed * 2) + 0.5)
+    mticks += (z * 300) / (speed * 2) - ticks
+    if mticks <= -1:
+        allticks -= 1
+        mticks += 1
+    elif mticks >= 1:
+        allticks += 1
+        mticks -= 1
+    b = (((x * x) + (z * z))**(1 / 2)) / 2
+    if x == 0:
+        th = math.radians(90)
+    else:
+        th = math.atan(z / abs(x))
+        if x < 0:
+            th = math.pi-th
+    for i in range(ticks):
+        for j in range(10):
+            th2 = math.radians((i * 10 + j) / (ticks * 10) * 180 - 90)
+            y = 2 * b * math.cos(th2)
+            p = b * math.sin(th2) + b
+            x = p * math.cos(th)
+            z = p * math.sin(th)
+            mainUrl = 'xsy\\data\\xsy\\functions\\' + funName + '\\main\\part' + \
+                str(int(allticks/20)) + '.mcfunction'
+            with open(mainUrl, 'a') as fp:
+                fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0 0 force\n' % (
+                    funName, allticks, random.choice(particle), -(x+pos[0]), y+pos[1], z+pos[2]))
         allticks += 1
     effectpos = newpos
     effectTicks = allticks

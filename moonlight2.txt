@@ -1,4 +1,4 @@
-moonlight straight flame star flame 0 91
+moonlight straight totem_of_undying doubleStar dripping_lava 0 air 91
 45 d4 52 d4 57 d8 41 d4 48 d4 53 d8
 43 d4 50 d4 55 d8 48 d4 55 d4 60 d4 55 d4
 45 d4 52 d4 57 d8 41 d4 48 d4 53 d8
