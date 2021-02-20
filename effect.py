@@ -34,5 +34,5 @@ def star(funName, particle, pos, time, r, fp):
         fp.write(s)
         th1 += 6
         th2 -= 9
-    fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0 500 force\n' % (
+    fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0 250 force\n' % (
         funName, time, particle, -pos[0], pos[1], pos[2]))

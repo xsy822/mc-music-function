@@ -16,6 +16,7 @@ class Track:
     def __init__(self, speed, funName, m=False):
         self.pos = [0, 0, 0]
         self.allticks = 0
+        self.mticks = 0
         self.delay = 30
         self.funName = funName
         self.speed = speed
@@ -37,8 +38,8 @@ class Track:
         if btn:
             self.delay = delay
         newpos = [tone, self.pos[1], self.pos[2] + self.delay]
-        self.allticks, self.pos = route.route(self.pos, newpos, self.speed, routeEffect, routeParticle,
-                                              self.funName, effectName, effectParticle, tone, sound, self.allticks, r, btn)
+        self.allticks, self.mticks, self.pos = route.route(self.pos, newpos, self.speed, routeEffect, routeParticle,
+                                                           self.funName, effectName, effectParticle, tone, sound, self.allticks, self.mticks, r, btn)
         print(self.pos)
 
 
@@ -58,7 +59,6 @@ def init(funName):
     fp.close()
 
 
-# 主旋律
 num = int(input('音轨数量：'))
 name = input('输入文件名：')
 allticks = 0
@@ -103,5 +103,14 @@ for i in range(int(allticks / 20 + 1)):
         fp.write('execute as @a[scores={%s=%d..%d}] run function %s:%s/main/part%d\n' % (
             mainTrack.funName, 20*i, 20*(i + 1), mainTrack.funName, mainTrack.funName, i))
 
+# 玩家传送及视角固定
+for i in range(allticks):
+    url = 'functions\\%s\\main\\part%d.mcfunction' % (
+        mainTrack.funName, int(i/20))
+    with open(url, 'a') as fp:
+        fp.write('execute as @a[scores={%s=%d}] run tp @s ~%d ~%d ~%.2f 0 40\n' %
+                 (funName, i, -60, 15, i*(speed/150)-20))
+
+url = 'functions\\' + mainTrack.funName + '\\main.mcfunction'
 with open(url, 'a') as fp:
     fp.write('scoreboard players add @a %s 1\n' % (mainTrack.funName))

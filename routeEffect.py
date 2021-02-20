@@ -1,7 +1,7 @@
 import effect
 
 
-def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, effectParticle, tone, sound, allticks, r, btn):
+def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, effectParticle, tone, sound, allticks, mticks, r, btn):
     """绘制轨道路径及音符特效
         - pos:三维坐标
         - newpos:目的地坐标
@@ -14,13 +14,14 @@ def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, e
         - tone:音调
         - sound:音色编号
         - allticks:总时间，单位tick
+        - mticks:用于减小误差的附加值
         - r:音符特效半径
         - btn:判断是否为同一拍的乐符
     """
     # 路线效果
     if routeEffect == 'straight':
-        allticks, effectTicks, pos, effectpos, mainUrl = straight(
-            pos, newpos, speed, routeParticle, funName, allticks, btn)
+        allticks, mticks, effectTicks, pos, effectpos, mainUrl = straight(
+            pos, newpos, speed, routeParticle, funName, allticks, mticks, btn)
 
     # 特效
     with open(mainUrl, 'a') as fp:
@@ -31,10 +32,10 @@ def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, e
     with open(mainUrl, 'a') as fp:
         playsound(funName, sound, tone, effectTicks, fp)
 
-    return allticks, pos
+    return allticks, mticks, pos
 
 
-def straight(pos, newpos, speed, particle, funName, allticks, btn):
+def straight(pos, newpos, speed, particle, funName, allticks, mticks, btn):
     """直线
         - pos:三维坐标
         - newpos:目的地坐标
@@ -45,6 +46,13 @@ def straight(pos, newpos, speed, particle, funName, allticks, btn):
     """
     x, y, z = [i - j for i, j in zip(newpos, pos)]
     ticks = int((z * 300) / (speed * 2) + 0.5)
+    mticks += (z * 300) / (speed * 2) - ticks
+    if mticks <= -1:
+        allticks -= 1
+        mticks += 1
+    elif mticks >= 1:
+        allticks += 1
+        mticks -= 1
     for i in range(ticks):
         for j in range(20):
             x1, z1 = round(pos[0] + x * (i * 20 + j) / (ticks * 20),
@@ -54,17 +62,14 @@ def straight(pos, newpos, speed, particle, funName, allticks, btn):
             with open(mainUrl, 'a') as fp:
                 fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0 0 force\n' % (
                     funName, allticks, particle, -x1, y, z1))
-        with open(mainUrl, 'a') as fp:
-            fp.write('execute as @a[scores={%s=%d}] run tp @s ~%d ~%d ~%.2f 0 30\n' % (
-                funName, allticks, -60, 10, z1-30))
         allticks += 1
-    effectpos = [x1, y, z1]
+    effectpos = newpos
     effectTicks = allticks
     if btn:
         pos = effectpos
     else:
         allticks -= ticks
-    return allticks, effectTicks, pos, effectpos, mainUrl
+    return allticks, mticks, effectTicks, pos, effectpos, mainUrl
 
 
 def playsound(funName, sound, tone, allticks, fp):

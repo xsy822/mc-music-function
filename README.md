@@ -25,8 +25,10 @@ mc-music-function 1.0
 - music.py _(此程序主要文件（入口），使用此程序即运行本文件)_
 - README.md
 - routeEffect.py _(路径特效，例如直线等，主程序的支持)_
-- star1.txt _(乐谱 1，一首乐曲由多条音轨组成，一个乐谱即一条音轨)_
-- star2.txt _(乐谱 2)_
+- musics _(存放乐谱，注：乐谱使用要与程序同级)_
+  - star1.txt _(乐谱 1，一首乐曲由多条音轨组成，一个乐谱即一条音轨)_
+  - star2.txt _(乐谱 2)_
+  - ...
 
 ### 使用
 
@@ -64,6 +66,11 @@ sound
 
 - 0 _(**古典钢琴**，目前仅有)_
 
-粒子名称，参考[mcwiki/particle](https://minecraft-zh.gamepedia.com/%E5%91%BD%E4%BB%A4/particle)
+粒子名称，[参考 mcwiki/particle](https://minecraft-zh.gamepedia.com/%E5%91%BD%E4%BB%A4/particle)
 若粒子名称中带有参数，如 `dust 1.0 0.5 0.5 1.0`
 请不要用空格间隔，应替换为`&`，如 `dust&1.0&0.5&0.5&1.0`
+
+#### 注意
+
+**要使用 function 包，需要保证 function 命名空间和 funName 一致**
+[参考 mcwiki/function](https://minecraft-zh.gamepedia.com/%E5%91%BD%E4%BB%A4/function)
