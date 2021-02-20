@@ -23,7 +23,7 @@
 - music.py _(此程序主要文件（入口），使用此程序即运行本文件)_
 - README.md
 - routeEffect.py _(路径特效，例如直线等，主程序的支持)_
-- musics _(存放乐谱，注：乐谱使用要与程序同级)_
+- musics _(存放旧乐谱，注：乐谱使用要与程序同级)_
   - star1.txt _(乐谱 1，一首乐曲由多条音轨组成，一个乐谱即一条音轨)_
   - star2.txt _(乐谱 2)_
   - ...
@@ -73,5 +73,4 @@ sound
 
 #### 注意
 
-**要使用 function 包，需要保证 function 命名空间和 funName 一致**
-[参考 mcwiki/function](https://minecraft-zh.gamepedia.com/%E5%91%BD%E4%BB%A4/function)
+**每次重新生成已有的 function，须手动删除 function，再重新生成**
