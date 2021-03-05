@@ -57,15 +57,20 @@ routeEffect
 
 - straight _(**直线**)_
 - oval _(**椭圆线**)_
+- brokenLine _(**上下对称折线**)_
 
 effectName
 
 - star _(**五芒星阵**)_
 - starUp _(**上升的五芒星**)_
+- square _(**方块**)_
 
 sound
 
-- 0 _(**古典钢琴**，目前仅有)_
+- 0 _(**古典钢琴**)_
+- 1 _(**吉他**)_
+- 2 _(**唢呐**)_
+- 3 _(**小提琴**)_
 
 粒子名称，[参考 mcwiki/particle](https://minecraft-zh.gamepedia.com/%E5%91%BD%E4%BB%A4/particle)
 若粒子名称中带有参数，如 `dust 1.0 0.5 0.5 1.0`
@@ -74,3 +79,7 @@ sound
 #### 注意
 
 **每次重新生成已有的 function，须手动删除 function，再重新生成**
+
+#### 效果示例
+
+[前往我的 bilibili 观看](https://space.bilibili.com/349558877)

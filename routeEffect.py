@@ -27,15 +27,20 @@ def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, e
     if routeEffect == 'oval':
         allticks, mticks, effectTicks, pos, effectpos, mainUrl = oval(
             pos, newpos, speed, routeParticle, funName, allticks, mticks, btn)
+    if routeEffect == 'brokenLine':
+        allticks, mticks, effectTicks, pos, effectpos, mainUrl = brokenLine(
+            pos, newpos, speed, routeParticle, funName, allticks, mticks, btn)
 
     # 特效
-    with open(mainUrl, 'a') as fp:
-        if effectName == 'star':
-            effect.star(funName, effectParticle,
-                        effectpos, effectTicks, block, r)
-        elif effectName == 'starUp':
-            effect.starUp(funName, effectParticle,
-                          effectpos, effectTicks, block, r)
+    if effectName == 'star':
+        effect.star(funName, effectParticle,
+                    effectpos, effectTicks, block, r)
+    elif effectName == 'starUp':
+        effect.starUp(funName, effectParticle,
+                      effectpos, effectTicks, block, r)
+    elif effectName == 'square':
+        effect.square(funName, effectParticle,
+                      effectpos, effectTicks, block, r)
 
     # 音色
     with open(mainUrl, 'a') as fp:
@@ -53,6 +58,8 @@ def straight(pos, newpos, speed, particle, funName, allticks, mticks, btn):
         - funName:函数名
         - allticks:总时间，单位tick
     """
+    initallticks = allticks
+    initmticks = mticks
     x, y, z = [i - j for i, j in zip(newpos, pos)]
     ticks = int((z * 300) / (speed * 2) + 0.5)
     mticks += (z * 300) / (speed * 2) - ticks
@@ -77,13 +84,16 @@ def straight(pos, newpos, speed, particle, funName, allticks, mticks, btn):
     if btn:
         pos = effectpos
     else:
-        allticks -= ticks
+        allticks = initallticks
+        mticks = initmticks
     return allticks, mticks, effectTicks, pos, effectpos, mainUrl
 
 
 def oval(pos, newpos, speed, particle, funName, allticks, mticks, btn):
     """椭圆线
     """
+    initallticks = allticks
+    initmticks = mticks
     x, y, z = [i - j for i, j in zip(newpos, pos)]
     ticks = int((z * 300) / (speed * 2) + 0.5)
     mticks += (z * 300) / (speed * 2) - ticks
@@ -112,6 +122,43 @@ def oval(pos, newpos, speed, particle, funName, allticks, mticks, btn):
             with open(mainUrl, 'a') as fp:
                 fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0 0 force\n' % (
                     funName, allticks, random.choice(particle), -(x+pos[0]), y+pos[1], z+pos[2]))
+        allticks += 1
+    effectpos = newpos
+    effectTicks = allticks
+    if btn:
+        pos = effectpos
+    else:
+        allticks = initallticks
+        mticks = initmticks
+    return allticks, mticks, effectTicks, pos, effectpos, mainUrl
+
+
+def brokenLine(pos, newpos, speed, particle, funName, allticks, mticks, btn):
+    """折线
+    """
+    x, y, z = [i - j for i, j in zip(newpos, pos)]
+    ticks = int((z * 300) / (speed * 2) + 0.5)
+    mticks += (z * 300) / (speed * 2) - ticks
+    if mticks <= -1:
+        allticks -= 1
+        mticks += 1
+    elif mticks >= 1:
+        allticks += 1
+        mticks -= 1
+    for i in range(ticks):
+        for j in range(10):
+            x1, z1 = round(pos[0] + x * (i * 10 + j) / (ticks * 10),
+                           2), round(pos[2] + z*(i * 10 + j) / (ticks * 10), 2)
+            y = 4 * (i * 10 + j) / (ticks * 10)
+            if y >= 2:
+                y = 4-y
+            mainUrl = 'xsy\\data\\xsy\\functions\\' + funName + '\\main\\part' + \
+                str(int(allticks/20)) + '.mcfunction'
+            with open(mainUrl, 'a') as fp:
+                fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0 0 force\n' % (
+                    funName, allticks, random.choice(particle), -x1, y + pos[1], z1))
+                fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0 0 force\n' % (
+                    funName, allticks, random.choice(particle), -x1, -y + pos[1], z1))
         allticks += 1
     effectpos = newpos
     effectTicks = allticks

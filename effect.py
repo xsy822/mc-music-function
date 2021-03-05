@@ -54,7 +54,8 @@ def star(funName, particle, pos, time, block, r):
 
 
 def starUp(funName, particle, pos, time, block, r):
-    print(pos)
+    """上升的五角星
+    """
     th1, th2 = 0, 360
     x, y, x1, y1, x2, y2, xc, yc = 0, 0, 0, 0, 0, 0, 0, 0
     num = int(time/20)
@@ -83,5 +84,31 @@ def starUp(funName, particle, pos, time, block, r):
             th2 -= 15
         # fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f ~ ~ ~ 0.1 50 force\n' % (
         #     funName, time, random.choice(['flame', 'end_rod']), -pos[0], pos[1], pos[2]))
+        fp.write('execute as @a[scores={%s=%d}] run setblock ~%.2f ~%.2f ~%.2f %s replace\n' % (
+            funName, time, -pos[0], pos[1], pos[2], block))
+
+
+def square(funName, particle, pos, time, block, r):
+    """方块
+    """
+    num = int(time/20)
+    url = 'xsy\\data\\xsy\\functions\\%s\\main\\part%d.mcfunction' % (
+        funName, num)
+    with open(url, 'a') as fp:
+        for x in [0, 2]:
+            for y in [0, 2]:
+                for z in range(20):
+                    fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f 0 3 0 0.1 0 force\n' % (
+                        funName, time, random.choice(particle), -((x - 1) + pos[0]), pos[1] + y - 1, pos[2] + (z / 10) - 1))
+        for y in [0, 2]:
+            for z in [0, 2]:
+                for x in range(20):
+                    fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f 0 3 0 0.1 0 force\n' % (
+                        funName, time, random.choice(particle), -(((x / 10) - 1) + pos[0]), pos[1] + y - 1, pos[2] + z - 1))
+        for x in [0, 2]:
+            for z in [0, 2]:
+                for y in range(20):
+                    fp.write('execute as @a[scores={%s=%d}] run particle %s ~%.2f ~%.2f ~%.2f 0 3 0 0.1 0 force\n' % (
+                        funName, time, random.choice(particle), -((x - 1) + pos[0]), pos[1] + (y / 10) - 1, pos[2] + z - 1))
         fp.write('execute as @a[scores={%s=%d}] run setblock ~%.2f ~%.2f ~%.2f %s replace\n' % (
             funName, time, -pos[0], pos[1], pos[2], block))

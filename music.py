@@ -35,12 +35,10 @@ class Track:
             - r:特效半径(默认1)
             - btn:是否切换下一拍
         """
-        if btn:
-            self.delay = delay
+        self.delay = delay
         newpos = [tone, self.pos[1], self.pos[2] + self.delay]
         self.allticks, self.mticks, self.pos = route.route(self.pos, newpos, self.speed, routeEffect, routeParticle,
                                                            self.funName, effectName, effectParticle, tone, sound, self.allticks, self.mticks, block, r, btn)
-        print(self.pos)
 
 
 def init(funName):
@@ -96,8 +94,11 @@ for j in range(num):
         elif i[0] == 'd':
             delay = int(i[1:])
         else:
+            print(int(i))
+            print(delay)
             mainTrack.add(int(i), delay, routeEffect, routeParticle,
-                          effectName, effectParticle, block, sound)
+                          effectName, effectParticle, sound, block)
+        print(mainTrack.pos)
     allticks = max(allticks, mainTrack.allticks)
 
 
@@ -119,4 +120,3 @@ for i in range(allticks):
 url = 'xsy\\data\\xsy\\functions\\' + mainTrack.funName + '\\main.mcfunction'
 with open(url, 'a') as fp:
     fp.write('scoreboard players add @a %s 1\n' % (mainTrack.funName))
-    fp.write('kill @e[type=item]\n')
