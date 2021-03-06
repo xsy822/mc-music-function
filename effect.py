@@ -12,7 +12,6 @@ def star(funName, particle, pos, time, block, r):
         - r:五角星外接圆半径
         - fp:文件指针
     """
-    print(pos)
     th1, th2 = 0, 360
     num = int(time/20)
     url = 'xsy\\data\\xsy\\functions\\%s\\main\\part%d.mcfunction' % (

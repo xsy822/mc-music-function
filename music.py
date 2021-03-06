@@ -94,7 +94,6 @@ for j in range(num):
         elif i[0] == 'd':
             delay = int(i[1:])
         else:
-            print(int(i))
             print(delay)
             mainTrack.add(int(i), delay, routeEffect, routeParticle,
                           effectName, effectParticle, sound, block)
