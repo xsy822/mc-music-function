@@ -1,0 +1,33 @@
+{
+  "particleNum": 5,
+  "tracks": 100,
+  "effectParticle": "end_rod",
+  "track1": {
+    "effect": " oval end_rod star ",
+    "hight": 0
+  },
+  "track2": {
+    "effect": " brokenLine end_rod square ",
+    "hight": 0
+  },
+  "track3": {
+    "effect": " straight end_rod starup ",
+    "hight": 5
+  },
+  "track4": {
+    "effect": " straight end_rod star ",
+    "hight": 5
+  },
+  "track5": {
+    "effect": " oval end_rod star ",
+    "hight": 0
+  },
+  "track6": {
+    "effect": " oval end_rod star ",
+    "hight": 0
+  },
+  "track7": {
+    "effect": " oval end_rod star ",
+    "hight": 0
+  }
+}

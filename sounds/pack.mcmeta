@@ -1,6 +1,6 @@
 {
   "pack": {
     "pack_format": 5,
-    "description": "自定义音乐包"
+    "description": "音色资源包，资源来自soma，由小世炎整理修改，适配1.15版本，兼容1.13以上"
   }
 }

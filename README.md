@@ -4,82 +4,67 @@
 
 ---
 
-## 文档
+### 使用说明
 
-### 文件结构
+运行 _music.py_ 选择你想要的 mid 文件，等待生完毕后，回车退出。
+文件夹里将会多出一个 _resources.zip_ 的压缩包，_xsy_ 内的内容将会改变，将这两个文件放至 mc 地图文件夹和文件夹下 datapacks 文件夹，即可运行游戏使用
 
-- `_pycache_` _(编译得到的 py 程序，effect.py 和 routeEffect.py，运行程序自动产生的)_
-- xsy _(数据包名[数据包参考 mcwiki](https://minecraft-zh.gamepedia.com/%E6%95%B0%E6%8D%AE%E5%8C%85))_
-  - .... _(数据包的基本结构和文件)_
-    - functions _(生成的 function 包，没有这个文件夹运行此程序也会自动产生)_
-      - star _(根据函数名生成的文件夹)_
-        - main
-          - part0.mcfunction _(主要效果实现)_
-          - ...
-        - init.mcfunction _(初始化计分板)_
-        - main.mcfunction _(增加计分用于计时及调用其他 function 的主干)_
-- sounds _(音色资源包，必须有这个才能用本 function，音色资源出自 soma，由小世炎修改，节选适配本程序及 mc 1.13 以后版本)[资源包相关内容查看 mcwiki](https://minecraft-zh.gamepedia.com/%E8%B5%84%E6%BA%90%E5%8C%85)_
-- effect.py _(音符特效的支持文件)_
-- music.py _(此程序主要文件（入口），使用此程序即运行本文件)_
-- README.md
-- routeEffect.py _(路径特效，例如直线等，主程序的支持)_
-- musics _(存放旧乐谱，注：乐谱使用要与程序同级)_
-  - star1.txt _(乐谱 1，一首乐曲由多条音轨组成，一个乐谱即一条音轨)_
-  - star2.txt _(乐谱 2)_
-  - ...
+_setting.json_ 是生成程序的设置调节文件，你可以修改里面的值来决定游戏内的效果
 
-### 使用
+_可能会出现选择 mid 文件但是提示说你选择的不是标准 mid 文件，这是 mido 库没办法解析，目前没办法解决_
 
-#### 乐谱格式
+_此外，不要选择 track0(全局音轨)内写音符信息的 mid 文件，此程序无法读取这种 mid 信息_
 
-多个乐谱格式须相同，文件名统一为 名字+数字+.txt ，如：star1.txt
-乐谱内容由声明和乐谱组成，用(任意)空白符隔开
-声明内容为：
+### 游戏内说明
 
-1. funName _(函数名，须统一)_
-1. routeEffect _(路径特效)_
-1. routeParticle _(路径粒子名称)_
-1. effectName _(音符特效)_
-1. effectParticle _(音符特效粒子名称)_
-1. sound _(音色代码)_
-1. block _(音符处的方块)_
-1. speed _(速度，拍/min)_
+要运行对应的 function，你需要两个命令方块
 
-乐谱：
-由音调与延迟(当前与下一音调的间隔，单位是 1/32 音符，没有（下一个音符和当前同时）不填)组成
-音调：0-127 对应 128 个半音，中央 c 为 60
+脉冲输入 `function xsy:(你的mid名字)/init` 运行
+循环输入 `function xsy:(你的mid名字)/main` 运行
 
-示例请看附带的乐谱
+### 注意
 
-#### 一些代码
+mid 文件名一定要为英文，不得带中文或者特殊符号，否则无法运行
+本文件夹内各种文件是本程序的支撑文件，请勿随意删除，修改或移动，否则导致程序无法正常运行
 
-routeEffect
+### _setting.json_ 说明
 
-- straight _(**直线**)_
-- oval _(**椭圆线**)_
-- brokenLine _(**上下对称折线**)_
+setting.json 格式如下
 
-effectName
+```
+{
+  "particleNum": 5,
+  "tracks": 100,
+  "effectParticle": "end_rod",
+  "track1": {
+    "effect": " oval end_rod star ",
+    "hight": 0
+  }
+}
+```
 
-- star _(**五芒星阵**)_
-- starUp _(**上升的五芒星**)_
-- square _(**方块**)_
+_"particleNum"_ 为粒子数量，0~n,推荐为 1-20 之间
+_"tracks"_ 音轨的数量，可以只取 mid 文件的前几条音轨，如果大于 mid 音轨的数量，则以 mid 文件为准
+_"effectParticle"_ 每个音符对应位置的粒子特效的粒子名
+_"track(n)"_ 对应每条音轨的设置，effect 为路径特效，前后有空格，值之间有空格，每个值分别对应，路径效果，路径粒子名，音符特效
+_"hight"_ 可以让一条音轨整体向上偏移，避免音轨过多而混乱
 
-sound
+若 track 设置的数量小于实际的数量，多出的都以第一条设置为准
 
-- 0 _(**古典钢琴**)_
-- 1 _(**吉他**)_
-- 2 _(**唢呐**)_
-- 3 _(**小提琴**)_
+**粒子名**:以 [mcwiki](https://minecraft-zh.gamepedia.com/%E7%B2%92%E5%AD%90#.E7.B1.BB.E5.9E.8B) 上为准，若粒子名中有空格，请用 `&` 替换，如 `dust 1.0 0.5 0.5 1.0` 应该为 `dust&1.0&0.5&0.5&1.0`
 
-粒子名称，[参考 mcwiki/particle](https://minecraft-zh.gamepedia.com/%E5%91%BD%E4%BB%A4/particle)
-若粒子名称中带有参数，如 `dust 1.0 0.5 0.5 1.0`
-请不要用空格间隔，应替换为`&`，如 `dust&1.0&0.5&0.5&1.0`
+**路径特效**：有
 
-#### 注意
+1. `straight`(直线)
+1. `oval`(椭圆)
+1. `brokenLine`(折线)
 
-**每次重新生成已有的 function，须手动删除 function，再重新生成**
+**音符特效**：有
 
-#### 效果示例
+1. `star`(五芒星阵)
+1. `starup`(上升的五芒星)
+1. `square`(立体的方块边框)
+
+### 效果演示
 
 [前往我的 bilibili 观看](https://space.bilibili.com/349558877)
