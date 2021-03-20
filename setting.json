@@ -1,6 +1,6 @@
 {
-  "particleNum": 5,
-  "tracks": 100,
+  "particleNum": 10,
+  "tracks": 2,
   "effectParticle": "end_rod",
   "track1": {
     "effect": " oval end_rod star ",
@@ -15,7 +15,7 @@
     "hight": 5
   },
   "track4": {
-    "effect": " straight end_rod star ",
+    "effect": " straight end_rod square ",
     "hight": 5
   },
   "track5": {

@@ -100,7 +100,7 @@ for j in range(num):
                           routeParticle, effectName, sound)
     allticks = max(allticks, mainTrack.allticks)
 
-for i in range(num):
+for i in range(midchange.num-1):
     os.remove('%s.txt' % (name+str(i+1)))
 
 # 配置资源包文件
