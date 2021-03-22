@@ -1,6 +1,7 @@
 {
-  "particleNum": 10,
-  "tracks": 2,
+  "url": "D:\\MCLDownload\\Game\\.minecraft\\saves\\MCGame-af98a4c4-73ea-4c35-82fb-001ecca32948\\",
+  "particleNum": 5,
+  "tracks": 10,
   "effectParticle": "end_rod",
   "track1": {
     "effect": " oval end_rod star ",

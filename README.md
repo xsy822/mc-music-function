@@ -33,6 +33,7 @@ setting.json 格式如下
 
 ```
 {
+  "url": "D:\\MCLDownload\\Game\\.minecraft\\saves\\MCGame-af98a4c4-73ea-4c35-82fb-001ecca32948\\",
   "particleNum": 5,
   "tracks": 100,
   "effectParticle": "end_rod",
@@ -43,6 +44,7 @@ setting.json 格式如下
 }
 ```
 
+- _"url"_ 为 mc 地图对应的地址（自动部署，不过注意不要在游戏运行时操作，正在使用的文件无法删除），斜杠应输两个（转义），最后需要加上两个斜杠，若值为空则不移动，需要手动移动
 - _"particleNum"_ 为粒子数量，0~n,推荐为 1-20 之间
 - _"tracks"_ 音轨的数量，可以只取 mid 文件的前几条音轨，如果大于 mid 音轨的数量，则以 mid 文件为准
 - _"effectParticle"_ 每个音符对应位置的粒子特效的粒子名

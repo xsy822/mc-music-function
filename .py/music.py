@@ -150,6 +150,13 @@ url = 'xsy\\data\\xsy\\functions\\' + mainTrack.funName + '\\main.mcfunction'
 with open(url, 'a') as fp:
     fp.write('scoreboard players add @a %s 1\n' % (mainTrack.funName))
 
+# 自动转移文件
+url = setting['url']
+if url != '':
+    os.remove(url + 'resources.zip')
+    shutil.rmtree(url+'datapacks\\xsy')
+    shutil.copyfile('resources.zip', url+'resources.zip')
+    shutil.copytree('xsy', url+'datapacks\\xsy')
 
 print('完成！')
 input('输入回车结束！')

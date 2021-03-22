@@ -86,13 +86,25 @@ for i in a['tracks'][1:]:
     for key in i:
         print(key)
     add_time = 0
+    m_add_time = 0
     for j in i[key]:
         if j['type'] == 'program_change':
             program = j['program']
         if j['type'] == 'note_on':
-            if int((add_time + j['time']) * 8 / ticks_per_beat) != 0:
-                msg.append(
-                    'd'+str(int((j['time'] + add_time)*8/ticks_per_beat)))
+            m_add_time += ((add_time + j['time']) * 8 / ticks_per_beat) - \
+                int((add_time + j['time']) * 8 / ticks_per_beat)
+            add_time = int((add_time + j['time']) * 8 / ticks_per_beat + 0.5)
+            if m_add_time <= -1:
+                add_time -= 1
+                m_add_time += 1
+            elif m_add_time > 1:
+                add_time += 1
+                m_add_time -= 1
+            if add_time < 0:
+                add_time = 0
+                m_add_time -= 1
+            if add_time != 0:
+                msg.append('d' + str(add_time))
             msg.append(str(j['note']))
             add_time = 0
         elif j['type'] == 'note_off':

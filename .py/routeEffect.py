@@ -121,6 +121,8 @@ def oval(pos, newpos, speed, particle, funName, allticks, mticks, particleNum, b
 def brokenLine(pos, newpos, speed, particle, funName, allticks, mticks, particleNum, btn):
     """折线
     """
+    initallticks = allticks
+    initmticks = mticks
     x, y, z = [i - j for i, j in zip(newpos, pos)]
     ticks = int((z * 300) / (speed * 2) + 0.5)
     mticks += (z * 300) / (speed * 2) - ticks
@@ -150,7 +152,8 @@ def brokenLine(pos, newpos, speed, particle, funName, allticks, mticks, particle
     if btn:
         pos = effectpos
     else:
-        allticks -= ticks
+        allticks = initallticks
+        mticks = initmticks
     return allticks, mticks, effectTicks, pos, effectpos
 
 
