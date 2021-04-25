@@ -127,4 +127,4 @@ for i in a['tracks'][1:]:
         num += 1
 
 # 删除json
-os.remove(fn+'.json')
+# os.remove(fn+'.json')
