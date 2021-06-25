@@ -1,7 +1,8 @@
 {
   "url": "D:\\MCLDownload\\Game\\.minecraft\\saves\\MCGame-af98a4c4-73ea-4c35-82fb-001ecca32948\\",
-  "particleNum": 5,
-  "tracks": 10,
+  "particleNum": 10,
+  "tracks": 8,
+  "speed": 100,
   "effectParticle": "end_rod",
   "track1": {
     "effect": " oval end_rod star ",
@@ -13,11 +14,11 @@
   },
   "track3": {
     "effect": " straight end_rod starup ",
-    "hight": 5
+    "hight": 10
   },
   "track4": {
     "effect": " straight end_rod square ",
-    "hight": 5
+    "hight": 10
   },
   "track5": {
     "effect": " oval end_rod star ",
@@ -28,7 +29,8 @@
     "hight": 0
   },
   "track7": {
+    "sound": 0,
     "effect": " oval end_rod star ",
-    "hight": 0
+    "hight": 15
   }
 }

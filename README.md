@@ -44,10 +44,12 @@ setting.json 格式如下
   "url": "D:\\MCLDownload\\Game\\.minecraft\\saves\\MCGame-af98a4c4-73ea-4c35-82fb-001ecca32948\\",
   "particleNum": 5,
   "tracks": 100,
+  "speed":100,
   "effectParticle": "end_rod",
   "track1": {
     "effect": " oval end_rod star ",
-    "hight": 0
+    "hight": 0,
+    "sound"：0,
   }
 }
 ```
@@ -55,9 +57,11 @@ setting.json 格式如下
 - _"url"_ 为 mc 地图对应的地址（自动部署，不过注意不要在游戏运行时操作，正在使用的文件无法删除），斜杠应输两个（转义），最后需要加上两个斜杠，若值为空则不移动，需要手动移动
 - _"particleNum"_ 为粒子数量，0~n,推荐为 1-20 之间
 - _"tracks"_ 音轨的数量，可以只取 mid 文件的前几条音轨，如果大于 mid 音轨的数量，则以 mid 文件为准
+- _"speed"_ 速度（bpm）,须手动设置
 - _"effectParticle"_ 每个音符对应位置的粒子特效的粒子名
 - _"track(n)"_ 对应每条音轨的设置，effect 为路径特效，前后有空格，值之间有空格，每个值分别对应，路径效果，路径粒子名，音符特效
-- _"hight"_ 可以让一条音轨整体向上偏移，避免音轨过多而混乱
+  - _"hight"_ 可以让一条音轨整体向上偏移，避免音轨过多而混乱
+  - _"sound"_ 可选填，该值为指定音色，为 0 则是打击乐，其他参照标准 mid 音色表
 
 若 track 设置的数量小于实际的数量，多出的都以第一条设置为准
 

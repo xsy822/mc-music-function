@@ -3,7 +3,7 @@ import math
 import effect
 
 
-def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, tone, sound, allticks, mticks, particleNum, btn):
+def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, tone, sound, allticks, mticks, particleNum, velocity, btn):
     # 路线效果
     if routeEffect == 'straight':
         allticks, mticks, effectTicks, pos, effectpos = straight(
@@ -28,7 +28,7 @@ def route(pos, newpos, speed, routeEffect, routeParticle, funName, effectName, t
     url = 'xsy\\data\\xsy\\functions\\%s\\main\\part%d.mcfunction' % (
         funName, num)
     with open(url, 'a') as fp:
-        playsound(funName, sound, tone, effectTicks, fp)
+        playsound(funName, sound, tone, velocity, effectTicks, fp)
 
     return allticks, mticks, pos
 
@@ -157,7 +157,7 @@ def brokenLine(pos, newpos, speed, particle, funName, allticks, mticks, particle
     return allticks, mticks, effectTicks, pos, effectpos
 
 
-def playsound(funName, sound, tone, allticks, fp):
+def playsound(funName, sound, tone, velocity, allticks, fp):
     """播放声音
     - funName:函数名
     - sound: 音色编号
@@ -165,5 +165,5 @@ def playsound(funName, sound, tone, allticks, fp):
     - allticks:播放声音的时刻
     - fp:写入位置指针
     """
-    fp.write('execute as @a[scores={%s=%d}] at @s run playsound %s.%d master @a ~ ~ ~\n' % (
-        funName, allticks, sound, tone))
+    fp.write('execute as @a[scores={%s=%d}] at @s run playsound %s.%d master @a ~ ~ ~ %lf\n' % (
+        funName, allticks, sound, tone, velocity))

@@ -1,0 +1,7 @@
+/__pycache__
+*.json
+!setting.json
+/.py/__pycache__
+/.py/build
+/.py/dist
+/xsy/data/xsy/functions

@@ -42,11 +42,11 @@ class Track:
         if m:
             init(self.funName)
 
-    def add(self, tone, delay, routeEffect, routeParticle, effectName, sound, btn=False):
+    def add(self, tone, delay, routeEffect, routeParticle, effectName, sound, velocity, btn=False):
         self.delay = delay
         newpos = [tone, self.pos[1], self.pos[2] + self.delay]
         self.allticks, self.mticks, self.pos = route.route(
-            self.pos, newpos, self.speed, routeEffect, routeParticle, self.funName, effectName, tone, sound, self.allticks, self.mticks, self.particleNum, btn)
+            self.pos, newpos, self.speed, routeEffect, routeParticle, self.funName, effectName, tone, sound, self.allticks, self.mticks, self.particleNum, velocity, btn)
 
 
 # 获取设置
@@ -90,14 +90,17 @@ for j in range(num):
     delay = 30
     for index, i in enumerate(a):
         print('track%d: %d/%d' % (j+1, index+1, len(a)))
+
         if i[0] == 'c':
-            mainTrack.add(int(i[1:]), delay, routeEffect, routeParticle,
-                          effectName, sound, btn=True)
+            noteData = i.split("v")
+            mainTrack.add(int(noteData[0][1:]), delay, routeEffect, routeParticle,
+                          effectName, sound, float(noteData[1]), btn=True)
         elif i[0] == 'd':
             delay = int(i[1:])
         else:
-            mainTrack.add(int(i), delay, routeEffect,
-                          routeParticle, effectName, sound)
+            noteData = i.split("v")
+            mainTrack.add(int(noteData[0]), delay, routeEffect,
+                          routeParticle, effectName, sound, float(noteData[1]))
     allticks = max(allticks, mainTrack.allticks)
 
 for i in range(midchange.num-1):
@@ -133,7 +136,7 @@ effect.square(url, effectParticle)
 
 # 收尾
 url = 'xsy\\data\\xsy\\functions\\' + mainTrack.funName + '\\main.mcfunction'
-for i in range(int(allticks / 20 + 1)):
+for i in range(int(allticks / 20)+10):
     with open(url, 'a') as fp:
         fp.write('execute as @a[scores={%s=%d..%d}] run function %s:%s/main/part%d\n' % (
             mainTrack.funName, 20*i, 20*(i + 1), 'xsy', mainTrack.funName, i))
@@ -143,8 +146,8 @@ for i in range(allticks):
     url = 'xsy\\data\\xsy\\functions\\%s\\main\\part%d.mcfunction' % (
         mainTrack.funName, int(i/20))
     with open(url, 'a') as fp:
-        fp.write('execute as @a[scores={%s=%d}] run tp @s ~%d ~%d ~%.2f 0 50\n' %
-                 (funName, i, -60, 30, i*(speed/150)-30))
+        fp.write('execute as @a[scores={%s=%d}] run tp @s ~%d ~%d ~%.2f -30 30\n' %
+                 (funName, i, -80, 20, i*(speed/150)-40))
 
 url = 'xsy\\data\\xsy\\functions\\' + mainTrack.funName + '\\main.mcfunction'
 with open(url, 'a') as fp:
@@ -157,6 +160,6 @@ if url != '':
     shutil.rmtree(url+'datapacks\\xsy')
     shutil.copyfile('resources.zip', url+'resources.zip')
     shutil.copytree('xsy', url+'datapacks\\xsy')
-
+    os.remove("resources.zip")
 print('完成！')
 input('输入回车结束！')

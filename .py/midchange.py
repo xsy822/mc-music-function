@@ -24,13 +24,9 @@ while True:
     else:
         del cr
         break
-
-
 # json文件路径
 cr = os.getcwd()+"\\"+fn+".json"
 kev_file = open(cr, "w", encoding="UTF-8")
-
-
 # 处理写入
 ppqn = int(midi_file.ticks_per_beat)
 events_list = []
@@ -54,34 +50,29 @@ kev = {'events': events_list[0], 'tracks': events_list[1:]}
 r = json.dumps(kev, indent=2)
 kev_file.write(r)
 kev_file.close()
-
-
 # 读取处理json文件
 with open(fn+'.json', 'r') as fp:
     content = fp.read()
     a = json.loads(content)
-
 ticks_per_beat = a['events']['value']
 print(ticks_per_beat)
-
-track = a['tracks'][0]
-tempo = 9999999999
-for i in track['track0']:
-    if i['type'] == 'set_tempo':
-        tempo = min(i['tempo'], tempo)
-    if i['type'] == 'time_signature':
-        numerator = i['numerator']
-
-speed = int(60000000 / tempo)
-
-
+# track = a['tracks'][0]
+# temponum = 0
+# tempo = 0
+# for i in track['track0']:
+#     if i['type'] == 'set_tempo':
+#         tempo += i['tempo']
+#         temponum += 1
+#     if i['type'] == 'time_signature':
+#         numerator = i['numerator']
+# tempo /= temponum
+# speed = int(60000000 / tempo)
 # 获取设置
 with open('setting.json', 'r') as fp:
     content = fp.read()
     setting = json.loads(content)
-
 num = 1
-for i in a['tracks'][1:]:
+for i in a['tracks']:
     msg = []
     for key in i:
         print(key)
@@ -93,7 +84,8 @@ for i in a['tracks'][1:]:
         if j['type'] == 'note_on':
             m_add_time += ((add_time + j['time']) * 8 / ticks_per_beat) - \
                 int((add_time + j['time']) * 8 / ticks_per_beat)
-            add_time = int((add_time + j['time']) * 8 / ticks_per_beat + 0.5)
+            add_time = int((add_time + j['time'])
+                           * 8 / ticks_per_beat + 0.5)
             if m_add_time <= -1:
                 add_time -= 1
                 m_add_time += 1
@@ -105,7 +97,8 @@ for i in a['tracks'][1:]:
                 m_add_time -= 1
             if add_time != 0:
                 msg.append('d' + str(add_time))
-            msg.append(str(j['note']))
+            msg.append(str(j['note'])+"v" +
+                       str(max(round(j["velocity"]/127, 3), 0.005)))
             add_time = 0
         elif j['type'] == 'note_off':
             add_time += j['time']
@@ -114,8 +107,14 @@ for i in a['tracks'][1:]:
         if msg[0][0] == 'd' and msg[0][1] == '0':
             msg = msg[1:]
         else:
-            msg = ['0'] + msg
-        sound = str(program + 1)
+            msg = ['0v0'] + msg
+        sound = str(program+1)
+        if 'sound' in setting['track'+str(num)]:
+            sound = str(setting['track'+str(num)]['sound'])
+        if setting['speed'] != 0:
+            speed = setting['speed']
+        else:
+            speed = 100
         if 'track'+str(num) in setting:
             msg = [fn+setting['track'+str(num)]['effect'] + sound + ' ' + str(
                 setting['track' + str(num)]['hight']) + ' ' + str(speed) + '\n'] + msg
@@ -125,6 +124,5 @@ for i in a['tracks'][1:]:
         with open('%s%d.txt' % (fn, num), 'w') as fp:
             fp.write(' '.join(msg))
         num += 1
-
 # 删除json
-# os.remove(fn+'.json')
+os.remove(fn+'.json')
