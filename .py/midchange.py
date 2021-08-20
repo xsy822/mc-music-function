@@ -109,13 +109,13 @@ for i in a['tracks']:
         else:
             msg = ['0v0'] + msg
         sound = str(program+1)
-        if 'sound' in setting['track'+str(num)]:
-            sound = str(setting['track'+str(num)]['sound'])
         if setting['speed'] != 0:
             speed = setting['speed']
         else:
             speed = 100
         if 'track'+str(num) in setting:
+            if 'sound' in setting['track'+str(num)]:
+                sound = str(setting['track'+str(num)]['sound'])
             msg = [fn+setting['track'+str(num)]['effect'] + sound + ' ' + str(
                 setting['track' + str(num)]['hight']) + ' ' + str(speed) + '\n'] + msg
         else:
